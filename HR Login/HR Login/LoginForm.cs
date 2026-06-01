@@ -13,6 +13,7 @@ namespace HR_Login
 {
     public partial class LoginForm : Form
     {
+        string connectionString = "server=localhost;database=hrapplication;uid=root;pwd=1234;";
         public LoginForm()
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace HR_Login
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -38,3 +38,4 @@ namespace HR_Login
         }
     }
 }
+

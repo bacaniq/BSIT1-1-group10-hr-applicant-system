@@ -8,23 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace HR_Login
 {
     public partial class DashboardForm : Form
     {
+        string connectionString = 
+            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
         public DashboardForm()
         {
             InitializeComponent();
-            LoadDashboardData();
         }
 
-        private void LoadDashboardData()
+        private void LoadTotalApplicants()
         {
-            lblTotalApplicants.Text = "Total Applicants: 25";
-            lblPendingScreening.Text = "Pending Screening: 10";
-            lblInterviews.Text = "Interviews Today: 5";
-            lblHired.Text = "Hired Applicants: 3";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM applicants";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                lblApplicants.Text = count.ToString();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -38,5 +47,27 @@ namespace HR_Login
             login.Show();
             this.Close();
         }
+
+        private void btnTestConnection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    MessageBox.Show("Connected to hrapplicant database!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            LoadTotalApplicants();
+        }
     }
 }
+
