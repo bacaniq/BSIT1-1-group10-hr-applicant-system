@@ -58,6 +58,7 @@
             this.tbforgotpassword.TabIndex = 15;
             this.tbforgotpassword.TabStop = true;
             this.tbforgotpassword.Text = "Forgot Password";
+            this.tbforgotpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.tbforgotpassword_LinkClicked);
             // 
             // tbregisteraccount
             // 

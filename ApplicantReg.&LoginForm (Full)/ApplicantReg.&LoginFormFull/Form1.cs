@@ -1,4 +1,5 @@
-﻿using ApplicantRegistrationFormFull;
+﻿using ApplicantReg._LoginFormFull;
+using ApplicantRegistrationFormFull;
 using BCrypt.Net;
 using MySql.Data.MySqlClient;
 using System;
@@ -73,10 +74,17 @@ namespace ApplicantLogInFormFull
         private void tbregisteraccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();              
-            Form2 registerForm = new Form2();
-            registerForm.ShowDialog(); 
+            Form2 registerformfull = new Form2();
+            registerformfull.ShowDialog(); 
             this.Show();
         }
-    
+
+        private void tbforgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Form3 forgotpassformfull = new Form3();
+            forgotpassformfull.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -41,3 +41,4 @@ C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFor
 C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\Applican.191BE5C2.Up2Date
 C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.exe
 C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg._LoginFormFull.Form3.resources
