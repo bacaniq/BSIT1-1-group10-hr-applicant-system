@@ -88,6 +88,7 @@
             this.btnScreenings.TabIndex = 5;
             this.btnScreenings.Text = "Screenings";
             this.btnScreenings.UseVisualStyleBackColor = true;
+            this.btnScreenings.Click += new System.EventHandler(this.btnScreenings_Click);
             // 
             // btnInterviews
             // 
@@ -97,6 +98,7 @@
             this.btnInterviews.TabIndex = 6;
             this.btnInterviews.Text = "Interviews";
             this.btnInterviews.UseVisualStyleBackColor = true;
+            this.btnInterviews.Click += new System.EventHandler(this.btnInterviews_Click_1);
             // 
             // btnLogout
             // 

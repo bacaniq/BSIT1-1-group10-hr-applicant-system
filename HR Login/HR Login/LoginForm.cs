@@ -36,6 +36,11 @@ namespace HR_Login
                 MessageBox.Show("Invalid login");
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

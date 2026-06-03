@@ -21,21 +21,36 @@ namespace HR_Login
             InitializeComponent();
         }
 
-        private void LoadTotalApplicants()
+        private int GetCount(MySqlConnection conn, string query)
+        {
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
+        private void LoadApplicantStats()
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = "SELECT COUNT(*) FROM applicants";
+                // Total Applicants
+                lblApplicants.Text = GetCount(conn, "SELECT COUNT(*) FROM applicants").ToString();
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                // Pending Screening
+                lblPendingScreenings.Text = GetCount(conn,
+                    "SELECT COUNT(*) FROM applications WHERE status = 'Pending Screening'").ToString();
 
-                lblApplicants.Text = count.ToString();
+                // Interview
+                lblInterviews.Text = GetCount(conn,
+                    "SELECT COUNT(*) FROM applications WHERE status = 'Interview'").ToString();
+
+                // Hired
+                lblHired.Text = GetCount(conn,
+                    "SELECT COUNT(*) FROM applications WHERE status = 'Hired'").ToString();
             }
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -66,7 +81,32 @@ namespace HR_Login
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            LoadTotalApplicants();
+            LoadApplicantStats();
+        }
+
+        private ScreeningForm screeningForm;
+
+        private void btnScreenings_Click(object sender, EventArgs e)
+        {
+            if (screeningForm == null || screeningForm.IsDisposed)
+            {
+                screeningForm = new ScreeningForm();
+            }
+
+            screeningForm.Show();
+            screeningForm.BringToFront();
+        }
+
+        private InterviewForm interviewForm;
+        private void btnInterviews_Click_1(object sender, EventArgs e)
+        {
+            if (interviewForm == null || interviewForm.IsDisposed)
+            {
+                interviewForm = new InterviewForm();
+            }
+
+            interviewForm.Show();
+            interviewForm.BringToFront();
         }
     }
 }
