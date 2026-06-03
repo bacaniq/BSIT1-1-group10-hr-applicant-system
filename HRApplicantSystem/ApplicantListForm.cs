@@ -5,14 +5,10 @@ using MySql.Data.MySqlClient;
 
 namespace HRApplicantSystem
 {
-    // =============================================
-    // ApplicantListForm.cs  (Shawn's Module 1)
-    // HR can search, filter, and view all applicants.
-    // Clicking an applicant opens ApplicantReviewForm.
-    // =============================================
+    
     public class ApplicantListForm : Form
     {
-        // --- Controls ---
+        
         private DataGridView dgvApplicants;
         private TextBox txtSearch;
         private ComboBox cmbStatusFilter;
@@ -95,8 +91,7 @@ namespace HRApplicantSystem
             });
         }
 
-        // Loads applicants from DB into the grid.
-        // Joins Applicants + ApplicantAccounts + Applications + JobVacancies.
+        
         private void LoadApplicants(string search = "", string statusFilter = "All")
         {
             try
@@ -383,8 +378,7 @@ namespace HRApplicantSystem
             }
         }
 
-        // Locks the application — sets status to "Under Review"
-        // and logs the change in ApplicationStatusHistory and AuditTrail.
+       
         private void BtnLockReview_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show(
