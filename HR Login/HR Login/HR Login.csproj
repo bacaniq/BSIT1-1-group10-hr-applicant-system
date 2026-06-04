@@ -109,6 +109,12 @@
     <Compile Include="InterviewForm.Designer.cs">
       <DependentUpon>InterviewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterviewScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterviewScheduleForm.Designer.cs">
+      <DependentUpon>InterviewScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScreeningForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterviewForm.resx">
       <DependentUpon>InterviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterviewScheduleForm.resx">
+      <DependentUpon>InterviewScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreeningForm.resx">
       <DependentUpon>ScreeningForm.cs</DependentUpon>
