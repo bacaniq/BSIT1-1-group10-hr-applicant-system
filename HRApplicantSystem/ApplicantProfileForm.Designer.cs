@@ -44,12 +44,13 @@
             txtWorkExp = new TextBox();
             btnSave = new Button();
             btnClear = new Button();
+            label8 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(38, 103);
+            label1.Location = new Point(278, 97);
             label1.Name = "label1";
             label1.Size = new Size(67, 15);
             label1.TabIndex = 0;
@@ -57,7 +58,7 @@
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(111, 95);
+            txtFirstName.Location = new Point(351, 89);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(172, 23);
             txtFirstName.TabIndex = 1;
@@ -65,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(38, 166);
+            label2.Location = new Point(278, 160);
             label2.Name = "label2";
             label2.Size = new Size(99, 15);
             label2.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(143, 158);
+            txtContact.Location = new Point(383, 152);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(140, 23);
             txtContact.TabIndex = 3;
@@ -81,7 +82,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(38, 197);
+            label3.Location = new Point(278, 191);
             label3.Name = "label3";
             label3.Size = new Size(52, 15);
             label3.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(96, 189);
+            txtAddress.Location = new Point(336, 183);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(187, 23);
@@ -98,7 +99,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(38, 134);
+            label4.Location = new Point(278, 128);
             label4.Name = "label4";
             label4.Size = new Size(66, 15);
             label4.TabIndex = 6;
@@ -106,7 +107,7 @@
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(111, 126);
+            txtLastName.Location = new Point(351, 120);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(172, 23);
             txtLastName.TabIndex = 7;
@@ -114,7 +115,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 230);
+            label5.Location = new Point(278, 224);
             label5.Name = "label5";
             label5.Size = new Size(63, 15);
             label5.TabIndex = 8;
@@ -122,7 +123,7 @@
             // 
             // txtEducation
             // 
-            txtEducation.Location = new Point(107, 222);
+            txtEducation.Location = new Point(347, 216);
             txtEducation.Multiline = true;
             txtEducation.Name = "txtEducation";
             txtEducation.Size = new Size(176, 23);
@@ -131,7 +132,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(38, 263);
+            label6.Location = new Point(278, 257);
             label6.Name = "label6";
             label6.Size = new Size(36, 15);
             label6.TabIndex = 10;
@@ -139,7 +140,7 @@
             // 
             // txtSkills
             // 
-            txtSkills.Location = new Point(80, 255);
+            txtSkills.Location = new Point(320, 249);
             txtSkills.Multiline = true;
             txtSkills.Name = "txtSkills";
             txtSkills.Size = new Size(203, 23);
@@ -148,7 +149,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(38, 295);
+            label7.Location = new Point(278, 289);
             label7.Name = "label7";
             label7.Size = new Size(97, 15);
             label7.TabIndex = 12;
@@ -156,7 +157,7 @@
             // 
             // txtWorkExp
             // 
-            txtWorkExp.Location = new Point(141, 287);
+            txtWorkExp.Location = new Point(381, 281);
             txtWorkExp.Multiline = true;
             txtWorkExp.Name = "txtWorkExp";
             txtWorkExp.Size = new Size(142, 23);
@@ -164,7 +165,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(208, 344);
+            btnSave.Location = new Point(448, 338);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 14;
@@ -174,7 +175,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(38, 344);
+            btnClear.Location = new Point(278, 338);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 15;
@@ -182,11 +183,22 @@
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 20F);
+            label8.Location = new Point(263, 30);
+            label8.Name = "label8";
+            label8.Size = new Size(281, 37);
+            label8.TabIndex = 16;
+            label8.Text = "Applicant Profile Form";
+            // 
             // ApplicantProfileForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label8);
             Controls.Add(btnClear);
             Controls.Add(btnSave);
             Controls.Add(txtWorkExp);
@@ -228,5 +240,6 @@
         private TextBox txtWorkExp;
         private Button btnSave;
         private Button btnClear;
+        private Label label8;
     }
 }

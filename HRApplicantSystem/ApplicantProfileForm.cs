@@ -12,10 +12,10 @@ namespace HRApplicantSystem
     {
 
         private int _accountID;
-        public ApplicantProfileForm(int accountID = 2)
+        public ApplicantProfileForm(int accountID)
         {
             InitializeComponent();
-            _accountID = accountID = 2;
+            _accountID = accountID;
         }
 
         private void ApplicantProfileForm_Load(object sender, EventArgs e)
@@ -56,9 +56,8 @@ namespace HRApplicantSystem
 
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(address))
             {
-                MessageBox.Show("First Name, Last Name, Contact Number, and Address are required.",
-                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Hihinto rito, hindi magpapatuloy sa database saving
+                MessageBox.Show("First Name, Last Name, Contact Number, and Address are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // hindi mag sasave sa database if may kulang na required fields
             }
 
             string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
