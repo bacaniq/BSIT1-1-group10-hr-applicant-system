@@ -98,7 +98,8 @@ namespace HRApplicantSystem
 
         private void btnDocuments_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("My Documents - Coming Soon!");
+            MyDocuments docsForm = new MyDocuments();
+            docsForm.Show();
         }
 
         private void btnStatus_Click(object sender, EventArgs e)

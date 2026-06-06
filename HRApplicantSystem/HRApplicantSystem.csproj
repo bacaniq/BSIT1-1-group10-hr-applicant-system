@@ -114,6 +114,12 @@
     <Compile Include="JobVacancies.Designer.cs">
       <DependentUpon>JobVacancies.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDocuments.Designer.cs">
+      <DependentUpon>MyDocuments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dashboard.resx">
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JobVacancies.resx">
       <DependentUpon>JobVacancies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDocuments.resx">
+      <DependentUpon>MyDocuments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

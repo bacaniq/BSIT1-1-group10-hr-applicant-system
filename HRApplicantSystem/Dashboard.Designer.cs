@@ -158,6 +158,7 @@
             this.btnDocuments.TabIndex = 10;
             this.btnDocuments.Text = "My Documents";
             this.btnDocuments.UseVisualStyleBackColor = false;
+            this.btnDocuments.Click += new System.EventHandler(this.btnDocuments_Click);
             // 
             // btnStatus
             // 
