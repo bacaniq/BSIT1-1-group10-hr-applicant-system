@@ -135,6 +135,7 @@
             this.btnJobs.TabIndex = 8;
             this.btnJobs.Text = "View Job Vacancies";
             this.btnJobs.UseVisualStyleBackColor = false;
+            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
             // btnApplication
             // 

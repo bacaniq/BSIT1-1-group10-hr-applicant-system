@@ -87,7 +87,8 @@ namespace HRApplicantSystem
 
         private void btnJobs_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Job Vacancies - Coming Soon!");
+            JobVacancies jobForm = new JobVacancies();
+            jobForm.Show();
         }
 
         private void btnApplication_Click(object sender, EventArgs e)
