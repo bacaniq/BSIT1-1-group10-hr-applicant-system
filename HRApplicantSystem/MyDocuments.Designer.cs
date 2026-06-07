@@ -30,6 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.listViewDocs = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblDocType = new System.Windows.Forms.Label();
             this.cmbDocType = new System.Windows.Forms.ComboBox();
             this.lblFileName = new System.Windows.Forms.Label();
@@ -37,10 +41,6 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnReplace = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblTitle
@@ -53,7 +53,6 @@
             this.lblTitle.Size = new System.Drawing.Size(207, 31);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "My Documents";
-           
             // 
             // listViewDocs
             // 
@@ -72,6 +71,26 @@
             this.listViewDocs.TabIndex = 1;
             this.listViewDocs.UseCompatibleStateImageBehavior = false;
             this.listViewDocs.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Document Type";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "File Name";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Status";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Remarks";
+            this.columnHeader4.Width = 150;
             // 
             // lblDocType
             // 
@@ -121,6 +140,7 @@
             this.btnUpload.TabIndex = 6;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnReplace
             // 
@@ -132,6 +152,7 @@
             this.btnReplace.TabIndex = 7;
             this.btnReplace.Text = "Replace";
             this.btnReplace.UseVisualStyleBackColor = false;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
             // 
             // btnBack
             // 
@@ -143,26 +164,7 @@
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Document Type";
-            this.columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "File Name";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Status";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Remarks";
-            this.columnHeader4.Width = 150;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // MyDocuments
             // 
