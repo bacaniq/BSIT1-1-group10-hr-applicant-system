@@ -17,9 +17,9 @@ namespace HRApplicantSystem
 
         private void ScreeningForm_Load(object sender, EventArgs e)
         {
-            string connecctionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
 
-            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connecctionString))
+            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
                 string query = @"SELECT CONCAT(ap.FirstName, ' ', ap.LastName) AS ApplicantName, 
@@ -55,8 +55,8 @@ namespace HRApplicantSystem
             string applicantName = listView1.SelectedItems[0].Text;
             string remarks = textBox1.Text;
 
-            string connecctionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
-            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connecctionString))
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
 
@@ -88,8 +88,8 @@ namespace HRApplicantSystem
             string applicantName = listView1.SelectedItems[0].Text;
             string remarks = textBox1.Text;
 
-            string connecctionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
-            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connecctionString))
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
                 string query = @"UPDATE Applications app
