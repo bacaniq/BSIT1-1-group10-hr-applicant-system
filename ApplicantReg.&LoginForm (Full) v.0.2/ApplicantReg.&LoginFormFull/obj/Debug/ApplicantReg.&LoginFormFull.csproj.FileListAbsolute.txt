@@ -1,0 +1,97 @@
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.csproj.AssemblyReference.cache
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg._LoginFormFull.Properties.Resources.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.csproj.GenerateResource.cache
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\ApplicantReg.&LoginFormFull.exe.config
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\ApplicantReg.&LoginFormFull.exe
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\ApplicantReg.&LoginFormFull.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\BCrypt-Net-Next.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\Google.Protobuf.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\MySql.Data.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Buffers.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Memory.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\ZstdSharp.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\Google.Protobuf.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\Google.Protobuf.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\MySql.Data.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Buffers.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Memory.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantLogInFormFull.Form1.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantRegistrationFormFull.Form2.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\Applican.191BE5C2.Up2Date
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.exe
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginFormFull\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg._LoginFormFull.Form3.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\ApplicantReg.&LoginFormFull.exe.config
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\ApplicantReg.&LoginFormFull.exe
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\ApplicantReg.&LoginFormFull.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\BCrypt-Net-Next.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Google.Protobuf.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\MySql.Data.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Buffers.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Memory.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\ZstdSharp.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Google.Protobuf.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Google.Protobuf.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\MySql.Data.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Buffers.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Memory.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.csproj.AssemblyReference.cache
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantLogInFormFull.Form1.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantRegistrationFormFull.Form2.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg._LoginFormFull.Form3.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg._LoginFormFull.Properties.Resources.resources
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.csproj.GenerateResource.cache
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\Applican.191BE5C2.Up2Date
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.exe
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\ApplicantReg.&LoginFormFull.pdb
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\MySqlConnector.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\MySqlConnector.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Andrei\OneDrive\Documents\Visual Studio 18\Codes\ApplicantReg.&LoginForm (Full)\ApplicantReg.&LoginFormFull\obj\Debug\MyApplicationPage.Form4.resources
