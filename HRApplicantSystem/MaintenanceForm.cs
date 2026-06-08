@@ -25,6 +25,7 @@ namespace HRApplicantSystem
             listView2.Items.Clear();
             listView3.Items.Clear();
             listView4.Items.Clear();
+            listView5.Items.Clear();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -78,6 +79,19 @@ namespace HRApplicantSystem
                     {
                         listView4.Items.Add(
                             new ListViewItem(reader["InterviewTypeName"].ToString())
+                        );
+                    }
+                }
+
+                //Load Assessment Types
+                string assQuery = "SELECT AssessmentTypeName FROM AssessmentTypes";
+                using (MySqlCommand cmd = new MySqlCommand(assQuery, connection))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        listView5.Items.Add(
+                            new ListViewItem(reader["AssessmentTypeName"].ToString())
                         );
                     }
                 }
@@ -327,9 +341,60 @@ namespace HRApplicantSystem
             LoadData();
         }
 
-        
+        //ADD ASSESSMENT TYPE
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                MessageBox.Show("Please enter an assessment type!");
+                return;
+            }
 
+            using (MySql.Data.MySqlClient.MySqlConnection connection =
+                new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+            {
+                connection.Open();
 
+                string query = "INSERT INTO AssessmentTypes (AssessmentTypeName) VALUES (@name)";
+                using (MySql.Data.MySqlClient.MySqlCommand cmd =
+                    new MySql.Data.MySqlClient.MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@name", textBox5.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Assessment type added successfully!");
+            textBox5.Clear();
+            LoadData();
+        }
 
+        // DELETE ASSESSMENT TYPE
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (listView5.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an assessment type to delete!");
+                return;
+            }
+
+            string selected = listView5.SelectedItems[0].Text;
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this assessment type?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result != DialogResult.Yes) return;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM AssessmentTypes WHERE AssessmentTypeName = @name";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@name", selected);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Assessment type deleted successfully!");
+            textBox5.Clear();
+            LoadData();
+        }
     }
 }

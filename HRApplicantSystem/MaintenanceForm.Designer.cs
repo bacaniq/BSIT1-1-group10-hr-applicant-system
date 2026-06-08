@@ -54,18 +54,25 @@
             textBox4 = new TextBox();
             listView4 = new ListView();
             columnHeader3 = new ColumnHeader();
+            tabPage5 = new TabPage();
+            listView5 = new ListView();
+            textBox5 = new TextBox();
+            button9 = new Button();
+            button10 = new Button();
+            columnHeader4 = new ColumnHeader();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage4.SuspendLayout();
+            tabPage5.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(292, 29);
+            label1.Location = new Point(305, 32);
             label1.Name = "label1";
             label1.Size = new Size(209, 45);
             label1.TabIndex = 0;
@@ -77,10 +84,11 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
-            tabControl1.Location = new Point(193, 94);
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.Location = new Point(128, 92);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(405, 201);
+            tabControl1.Size = new Size(558, 201);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -92,14 +100,14 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(397, 173);
+            tabPage1.Size = new Size(550, 173);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Departments";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(229, 138);
+            button2.Location = new Point(309, 138);
             button2.Name = "button2";
             button2.Size = new Size(75, 29);
             button2.TabIndex = 3;
@@ -109,7 +117,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(95, 138);
+            button1.Location = new Point(178, 138);
             button1.Name = "button1";
             button1.Size = new Size(81, 29);
             button1.TabIndex = 2;
@@ -119,7 +127,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(131, 99);
+            textBox1.Location = new Point(206, 98);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(143, 23);
             textBox1.TabIndex = 1;
@@ -129,7 +137,7 @@
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
             listView1.Location = new Point(6, 6);
             listView1.Name = "listView1";
-            listView1.Size = new Size(385, 76);
+            listView1.Size = new Size(538, 76);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -146,14 +154,14 @@
             tabPage2.Controls.Add(listView2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(397, 173);
+            tabPage2.Size = new Size(550, 173);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Requirement Types";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            button4.Location = new Point(229, 136);
+            button4.Location = new Point(294, 136);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 3;
@@ -163,7 +171,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(95, 136);
+            button3.Location = new Point(132, 136);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 2;
@@ -173,7 +181,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(98, 97);
+            textBox2.Location = new Point(160, 90);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(196, 23);
             textBox2.TabIndex = 1;
@@ -181,9 +189,9 @@
             // listView2
             // 
             listView2.Columns.AddRange(new ColumnHeader[] { RequirementName });
-            listView2.Location = new Point(15, 10);
+            listView2.Location = new Point(3, 10);
             listView2.Name = "listView2";
-            listView2.Size = new Size(371, 74);
+            listView2.Size = new Size(544, 74);
             listView2.TabIndex = 0;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
@@ -200,14 +208,14 @@
             tabPage3.Controls.Add(listView3);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(397, 173);
+            tabPage3.Size = new Size(550, 173);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Employment Types";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(67, 137);
+            button5.Location = new Point(160, 131);
             button5.Name = "button5";
             button5.Size = new Size(90, 30);
             button5.TabIndex = 4;
@@ -217,7 +225,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(195, 139);
+            button6.Location = new Point(272, 132);
             button6.Name = "button6";
             button6.Size = new Size(97, 28);
             button6.TabIndex = 3;
@@ -227,7 +235,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(105, 110);
+            textBox3.Location = new Point(180, 94);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(174, 23);
             textBox3.TabIndex = 1;
@@ -237,7 +245,7 @@
             listView3.Columns.AddRange(new ColumnHeader[] { columnHeader2 });
             listView3.Location = new Point(10, 11);
             listView3.Name = "listView3";
-            listView3.Size = new Size(377, 77);
+            listView3.Size = new Size(537, 77);
             listView3.TabIndex = 0;
             listView3.UseCompatibleStateImageBehavior = false;
             listView3.View = View.Details;
@@ -254,14 +262,14 @@
             tabPage4.Controls.Add(listView4);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(397, 173);
+            tabPage4.Size = new Size(550, 173);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Interview Types";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            button8.Location = new Point(204, 125);
+            button8.Location = new Point(273, 125);
             button8.Name = "button8";
             button8.Size = new Size(96, 29);
             button8.TabIndex = 4;
@@ -271,7 +279,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(84, 125);
+            button7.Location = new Point(160, 125);
             button7.Name = "button7";
             button7.Size = new Size(100, 29);
             button7.TabIndex = 3;
@@ -281,7 +289,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(115, 95);
+            textBox4.Location = new Point(180, 89);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(165, 23);
             textBox4.TabIndex = 1;
@@ -289,9 +297,9 @@
             // listView4
             // 
             listView4.Columns.AddRange(new ColumnHeader[] { columnHeader3 });
-            listView4.Location = new Point(11, 11);
+            listView4.Location = new Point(3, 11);
             listView4.Name = "listView4";
-            listView4.Size = new Size(374, 72);
+            listView4.Size = new Size(544, 72);
             listView4.TabIndex = 0;
             listView4.UseCompatibleStateImageBehavior = false;
             listView4.View = View.Details;
@@ -299,6 +307,60 @@
             // columnHeader3
             // 
             columnHeader3.Text = "InterviewTypeName";
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(button10);
+            tabPage5.Controls.Add(button9);
+            tabPage5.Controls.Add(textBox5);
+            tabPage5.Controls.Add(listView5);
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(550, 173);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Assessment Types";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // listView5
+            // 
+            listView5.Columns.AddRange(new ColumnHeader[] { columnHeader4 });
+            listView5.Location = new Point(3, 3);
+            listView5.Name = "listView5";
+            listView5.Size = new Size(544, 76);
+            listView5.TabIndex = 0;
+            listView5.UseCompatibleStateImageBehavior = false;
+            listView5.View = View.Details;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(168, 90);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(209, 23);
+            textBox5.TabIndex = 1;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(173, 128);
+            button9.Name = "button9";
+            button9.Size = new Size(75, 23);
+            button9.TabIndex = 2;
+            button9.Text = "Add";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(291, 128);
+            button10.Name = "button10";
+            button10.Size = new Size(75, 23);
+            button10.TabIndex = 3;
+            button10.Text = "Delete";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "AssessmentTypeName";
             // 
             // MaintenanceForm
             // 
@@ -319,6 +381,8 @@
             tabPage3.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -351,5 +415,11 @@
         private Button button5;
         private Button button8;
         private ColumnHeader columnHeader3;
+        private TabPage tabPage5;
+        private Button button10;
+        private Button button9;
+        private TextBox textBox5;
+        private ListView listView5;
+        private ColumnHeader columnHeader4;
     }
 }
