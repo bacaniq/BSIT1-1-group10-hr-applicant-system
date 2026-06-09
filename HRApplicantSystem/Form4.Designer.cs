@@ -192,7 +192,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtlname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtShowJobApplication)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtShowApplicationStatus)).EndInit();
