@@ -4,17 +4,17 @@ using MySql.Data.MySqlClient;
 
 namespace HRApplicantSystem
 {
-    public class HiringDecisionForm : Form
+    public partial class HiringDecisionForm : Form
     {
         private int _applicationID;
 
-        private Label lblApplicantName, lblJobTitle, lblCurrentStatus;
-        private Label valApplicantName, valJobTitle, valCurrentStatus;
-        private Label lblDecision, lblRemarks, lblTitle, lblWarning;
-        private ComboBox cmbDecision;
-        private TextBox txtRemarks;
-        private Button btnConfirm, btnCancel;
-        private Panel pnlInfo, pnlWarning;
+        //private Label lblApplicantName, lblJobTitle, lblCurrentStatus;
+        //private Label valApplicantName, valJobTitle, valCurrentStatus;
+        //private Label lblDecision, lblRemarks, lblTitle, lblWarning;
+        //private ComboBox cmbDecision;
+        //private TextBox txtRemarks;
+        //private Button btnConfirm, btnCancel;
+        //private Panel pnlInfo, pnlWarning;
 
         public HiringDecisionForm(int applicationID)
         {
@@ -124,7 +124,7 @@ namespace HRApplicantSystem
 
         private void CheckRoleAccess()
         {
-            if (!Session.IsHRManager())
+            if (!Session.IsHRManager)
             {
                 pnlWarning.Visible = true;
                 cmbDecision.Enabled = false;
