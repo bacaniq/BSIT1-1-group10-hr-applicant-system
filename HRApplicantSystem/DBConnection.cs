@@ -6,7 +6,7 @@ namespace HRApplicantSystem
     public class DBConnection
     {
         private static string connectionString =
-            "Server=localhost;Database=HRApplicantDB;Uid=root;Pwd=Babyquero22;";
+           "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
 
         public static MySqlConnection GetConnection()
         {

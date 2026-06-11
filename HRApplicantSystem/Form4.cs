@@ -10,7 +10,7 @@ namespace MyApplicationPage
 {
     public partial class Form4 : Form
     {
-        string connStr = "Server=localhost;Port=3306;Database=hr_applicant_system;User ID=root;Password=Remake07018!;";
+        string connStr = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;";
         public Form4()
         {
             InitializeComponent();

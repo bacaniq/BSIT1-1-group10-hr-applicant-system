@@ -49,6 +49,7 @@
             tblogin.TabIndex = 24;
             tblogin.Text = "Login";
             tblogin.UseVisualStyleBackColor = false;
+            tblogin.Click += tblogin_Click;
             // 
             // tbforgotpassword
             // 
@@ -116,7 +117,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 66.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(80, 70);
+            label1.Location = new Point(144, 70);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(663, 101);

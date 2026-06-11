@@ -17,6 +17,9 @@
     <Compile Update="ApplicantDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -32,10 +35,13 @@
     <Compile Update="HiringDecisionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="HRDashboardForm.cs">
+    <Compile Update="InterviewEvaluationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="InterviewEvaluationForm.cs">
+    <Compile Update="InterviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InterviewScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="JobVacancies.cs">

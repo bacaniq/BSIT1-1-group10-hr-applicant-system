@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using HRApplicantSystem;
 
 namespace HRApplicantSystem
 {
@@ -42,7 +43,8 @@ namespace HRApplicantSystem
                 {
                     MessageBox.Show("Welcome HR!");
                     hrReader.Close();
-                    HRDashboardForm dash = new HRDashboardForm();
+
+                    DashboardForm dash = new DashboardForm();
                     dash.Show();
                     this.Hide();
                     return;
