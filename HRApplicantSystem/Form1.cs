@@ -57,6 +57,7 @@ namespace ApplicantLogInFormFull
 
                             int accountID = reader.GetInt32("AccountID");
                             string storedHash = reader.GetString("Password");
+                            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
                             bool isValid = BCrypt.Net.BCrypt.Verify(password, storedHash);
 

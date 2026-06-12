@@ -136,7 +136,7 @@ namespace HRApplicantSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database Error: " + ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

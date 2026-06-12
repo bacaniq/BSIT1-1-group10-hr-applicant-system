@@ -19,6 +19,8 @@ namespace HRApplicantSystem
 
         public InterviewEvaluationForm(int scheduleID)
         {
+            MessageBox.Show("Schedule ID = " + scheduleID);
+
             _scheduleID = scheduleID;
             InitializeControls();
             LoadInterviewInfo();
@@ -179,7 +181,7 @@ namespace HRApplicantSystem
 
             try
             {
-                using (var conn = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;"))
+                using (var conn = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22"))
                 {
                     conn.Open();
 

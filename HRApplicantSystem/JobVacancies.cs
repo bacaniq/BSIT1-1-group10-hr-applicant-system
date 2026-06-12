@@ -25,7 +25,7 @@ namespace HRApplicantSystem
                 var conn = DBConnection.GetConnection();
                 conn.Open();
 
-                string query = "SELECT JobID, JobTitle, Department, Status FROM JobVacancies WHERE Status = 'Open' AND JobTitle LIKE '%" + search + "%'";
+                string query = "SELECT JobID, JobTitle, DepartmentID, Status FROM JobVacancies WHERE Status = 'Open' AND JobTitle LIKE '%" + search + "%'";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -33,7 +33,7 @@ namespace HRApplicantSystem
                 {
                     ListViewItem item = new ListViewItem(reader["JobID"].ToString());
                     item.SubItems.Add(reader["JobTitle"].ToString());
-                    item.SubItems.Add(reader["Department"].ToString());
+                    item.SubItems.Add(reader["DepartmentID"].ToString());
                     item.SubItems.Add(reader["Status"].ToString());
                     listViewJobs.Items.Add(item);
                 }
@@ -61,15 +61,15 @@ namespace HRApplicantSystem
             }
 
             string jobTitle = listViewJobs.SelectedItems[0].SubItems[1].Text;
-            string department = listViewJobs.SelectedItems[0].SubItems[2].Text;
+            string departmentID = listViewJobs.SelectedItems[0].SubItems[2].Text;
             string status = listViewJobs.SelectedItems[0].SubItems[3].Text;
 
-            MessageBox.Show("Job Title: " + jobTitle + "\nDepartment: " + department + "\nStatus: " + status);
+            MessageBox.Show("Job Title: " + jobTitle + "\nDepartment ID: " + departmentID + "\nStatus: " + status);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSearch_Click_1(object sender, EventArgs e)

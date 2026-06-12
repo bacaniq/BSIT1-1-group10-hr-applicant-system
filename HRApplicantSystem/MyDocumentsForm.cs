@@ -25,14 +25,14 @@ namespace HRApplicantSystem
                 var conn = DBConnection.GetConnection();
                 conn.Open();
 
-                string query = "SELECT DocumentType, FileName, Status, Remarks FROM ApplicantDocuments WHERE ApplicantID = " + ApplicantDashboardForm.ApplicantID;
+                string query = "SELECT RequirementTypeID, FilePath, Status, Remarks FROM ApplicantDocuments";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    ListViewItem item = new ListViewItem(reader["DocumentType"].ToString());
-                    item.SubItems.Add(reader["FileName"].ToString());
+                    ListViewItem item = new ListViewItem(reader["RequirementTypeID"].ToString());
+                    item.SubItems.Add(reader["FilePath"].ToString());
                     item.SubItems.Add(reader["Status"].ToString());
                     item.SubItems.Add(reader["Remarks"].ToString());
                     listViewDocs.Items.Add(item);
@@ -49,13 +49,31 @@ namespace HRApplicantSystem
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            if (cmbDocType.SelectedItem == null)
+            var conn = DBConnection.GetConnection();
+            conn.Open();
+
+            string uploadQuery =
+            "INSERT INTO ApplicantDocuments (ApplicationID, RequirementTypeID, FilePath, Status) " +
+            "VALUES (1, 1, '" + txtFileName.Text + "', 'Submitted')";
+
+            MySqlCommand uploadCmd = new MySqlCommand(uploadQuery, conn);
+            uploadCmd.ExecuteNonQuery();
+
+            MessageBox.Show("Document uploaded successfully!");
+
+            conn.Close();
+            LoadDocuments();
+        }
+
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            if (listViewDocs.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please select a document type!");
+                MessageBox.Show("Please select a document!");
                 return;
             }
 
-            if (txtFileName.Text == "")
+            if (string.IsNullOrWhiteSpace(txtFileName.Text))
             {
                 MessageBox.Show("Please enter a file name!");
                 return;
@@ -66,59 +84,21 @@ namespace HRApplicantSystem
                 var conn = DBConnection.GetConnection();
                 conn.Open();
 
-                // Check if document already exists
-                string checkQuery = "SELECT COUNT(*) FROM ApplicantDocuments WHERE ApplicantID = " + ApplicantDashboardForm.ApplicantID + " AND DocumentType = '" + cmbDocType.SelectedItem.ToString() + "'";
-                MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
-                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                string oldPath = listViewDocs.SelectedItems[0].SubItems[1].Text;
 
-                if (count > 0)
-                {
-                    MessageBox.Show("Document already uploaded! Use Replace instead.");
-                    conn.Close();
-                    return;
-                }
+                string query =
+                "UPDATE ApplicantDocuments " +
+                "SET FilePath = @newPath, Status = 'Submitted' " +
+                "WHERE FilePath = @oldPath";
 
-                string uploadQuery = "INSERT INTO ApplicantDocuments (ApplicantID, DocumentType, FileName, Status) VALUES (" + ApplicantDashboardForm.ApplicantID + ", '" + cmbDocType.SelectedItem.ToString() + "', '" + txtFileName.Text + "', 'Submitted')";
-                MySqlCommand uploadCmd = new MySqlCommand(uploadQuery, conn);
-                uploadCmd.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@newPath", txtFileName.Text);
+                cmd.Parameters.AddWithValue("@oldPath", oldPath);
 
-                MessageBox.Show("Document uploaded successfully!");
-                txtFileName.Text = "";
-                conn.Close();
-                LoadDocuments();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-        private void btnReplace_Click(object sender, EventArgs e)
-        {
-            if (listViewDocs.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Please select a document to replace!");
-                return;
-            }
-
-            if (txtFileName.Text == "")
-            {
-                MessageBox.Show("Please enter a new file name!");
-                return;
-            }
-
-            try
-            {
-                var conn = DBConnection.GetConnection();
-                conn.Open();
-
-                string docType = listViewDocs.SelectedItems[0].Text;
-                string replaceQuery = "UPDATE ApplicantDocuments SET FileName = '" + txtFileName.Text + "', Status = 'Submitted' WHERE ApplicantID = " + ApplicantDashboardForm.ApplicantID + " AND DocumentType = '" + docType + "'";
-                MySqlCommand replaceCmd = new MySqlCommand(replaceQuery, conn);
-                replaceCmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Document replaced successfully!");
-                txtFileName.Text = "";
+
                 conn.Close();
                 LoadDocuments();
             }

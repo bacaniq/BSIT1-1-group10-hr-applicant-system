@@ -32,13 +32,18 @@ namespace HRApplicantSystem
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
                 MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
 
+                listView1.Items.Clear();
+
                 while (reader.Read())
                 {
                     ListViewItem item = new ListViewItem(reader["ApplicantName"].ToString());
                     item.SubItems.Add(reader["JobTitle"].ToString());
                     item.SubItems.Add(reader["Status"].ToString());
+
                     listView1.Items.Add(item);
                 }
+
+                reader.Close();
 
 
             }

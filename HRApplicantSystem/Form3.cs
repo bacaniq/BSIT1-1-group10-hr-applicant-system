@@ -21,7 +21,7 @@ namespace HRApplicantSystem
         private void tbpasswordchange_Click(object sender, EventArgs e)
         {
 
-            string connStr = "Server=localhost;Port=3306;Database=hr_applicant_system;User ID=root;Password=Remake07018!;";
+            string connStr = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
 
             string email = tbstoredemail.Text.Trim();
             string newPassword = tbNewPass.Text.Trim();

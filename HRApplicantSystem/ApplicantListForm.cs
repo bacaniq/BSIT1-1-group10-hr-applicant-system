@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace HRApplicantSystem
 {
-    
+
     public partial class ApplicantListForm : Form
     {
 
@@ -91,7 +91,7 @@ namespace HRApplicantSystem
             });
         }
 
-        
+
         private void LoadApplicants(string search = "", string statusFilter = "All")
         {
             try
@@ -378,7 +378,7 @@ namespace HRApplicantSystem
             }
         }
 
-       
+
         private void BtnLockReview_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show(

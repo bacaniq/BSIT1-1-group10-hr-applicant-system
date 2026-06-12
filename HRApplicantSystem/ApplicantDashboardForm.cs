@@ -1,6 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Data.Common;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace HRApplicantSystem
 {
@@ -28,11 +29,11 @@ namespace HRApplicantSystem
         {
             try
             {
-                var conn = DBConnection.GetConnection();
-                conn.Open();
+                var connectionString = DBConnection.GetConnection();
+                connectionString.Open();
 
                 string nameQuery = "SELECT FirstName, LastName FROM applicants WHERE AccountID = " + ApplicantID;
-                MySqlCommand nameCmd = new MySqlCommand(nameQuery, conn);
+                MySqlCommand nameCmd = new MySqlCommand(nameQuery, connectionString);
                 MySqlDataReader nameReader = nameCmd.ExecuteReader();
                 if (nameReader.Read())
                 {
@@ -40,8 +41,8 @@ namespace HRApplicantSystem
                 }
                 nameReader.Close();
 
-                string statusQuery = "SELECT Status FROM Applications WHERE ApplicantID = " + ApplicantID;
-                MySqlCommand statusCmd = new MySqlCommand(statusQuery, conn);
+                string statusQuery = "SELECT Status FROM Applications WHERE AccountID = " + ApplicantID;
+                MySqlCommand statusCmd = new MySqlCommand(statusQuery, connectionString);
                 MySqlDataReader statusReader = statusCmd.ExecuteReader();
                 if (statusReader.Read())
                 {
@@ -53,19 +54,16 @@ namespace HRApplicantSystem
                 }
                 statusReader.Close();
 
-                string docQuery = "SELECT COUNT(*) FROM ApplicantDocuments WHERE ApplicantID = " + ApplicantID + " AND Status = 'Missing'";
-                MySqlCommand docCmd = new MySqlCommand(docQuery, conn);
-                int missingCount = Convert.ToInt32(docCmd.ExecuteScalar());
-                lblMissingValue.Text = missingCount.ToString();
+                lblMissingValue.Text = "0";
 
-                string intQuery = "SELECT i.ScheduledDate, i.Mode FROM InterviewSchedules i " +
-                                  "JOIN Applications a ON i.ApplicationID = a.ApplicationID " +
-                                  "WHERE a.ApplicantID = " + ApplicantID;
-                MySqlCommand intCmd = new MySqlCommand(intQuery, conn);
+                string intQuery = "SELECT i.InterviewDate, i.Mode FROM InterviewSchedules i " +
+                  "JOIN Applications a ON i.ApplicationID = a.ApplicationID " +
+                  "WHERE a.AccountID = " + ApplicantID;
+                MySqlCommand intCmd = new MySqlCommand(intQuery, connectionString);
                 MySqlDataReader intReader = intCmd.ExecuteReader();
                 if (intReader.Read())
                 {
-                    lblInterviewValue.Text = intReader["ScheduledDate"] + " - " + intReader["Mode"];
+                    lblInterviewValue.Text = intReader["InterviewDate"] + " - " + intReader["Mode"];
                 }
                 else
                 {
@@ -73,7 +71,7 @@ namespace HRApplicantSystem
                 }
                 intReader.Close();
 
-                conn.Close();
+                connectionString.Close();
             }
             catch (Exception ex)
             {
