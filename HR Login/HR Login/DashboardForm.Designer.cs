@@ -32,7 +32,6 @@
             this.btnScreenings = new System.Windows.Forms.Button();
             this.btnInterviews = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnTestConnection = new System.Windows.Forms.Button();
             this.lblTotalApplicants = new System.Windows.Forms.Label();
             this.lblPendingScreenings = new System.Windows.Forms.Label();
             this.lblInterviews = new System.Windows.Forms.Label();
@@ -94,17 +93,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnTestConnection
-            // 
-            this.btnTestConnection.Location = new System.Drawing.Point(81, 225);
-            this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(111, 23);
-            this.btnTestConnection.TabIndex = 8;
-            this.btnTestConnection.Text = "Test Connection";
-            this.btnTestConnection.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTestConnection.UseVisualStyleBackColor = true;
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
             // 
             // lblTotalApplicants
             // 
@@ -251,7 +239,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTotal);
             this.Controls.Add(this.lblTotalApplicants);
-            this.Controls.Add(this.btnTestConnection);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnInterviews);
             this.Controls.Add(this.btnScreenings);
@@ -281,7 +268,6 @@
         private System.Windows.Forms.Button btnScreenings;
         private System.Windows.Forms.Button btnInterviews;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnTestConnection;
         private System.Windows.Forms.Label lblTotalApplicants;
         private System.Windows.Forms.Label lblPendingScreenings;
         private System.Windows.Forms.Label lblInterviews;

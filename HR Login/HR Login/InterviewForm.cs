@@ -21,21 +21,32 @@ namespace HR_Login
             InitializeComponent();
         }
 
-        private void LoadInterviews()
+        private void LoadInterviews(string search = "")
         {
-            string connectionString =
-            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
-
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = "SELECT * FROM interviewschedules";
+                string query = @"
+            SELECT
+                s.ScheduleID,
+                CONCAT(a.FirstName, ' ', a.LastName) AS ApplicantName,
+                s.InterviewDate,
+                s.Interviewer,
+                s.Mode,
+                s.Location,
+                s.Status
+            FROM interviewschedules s
+            JOIN applications ap ON s.ApplicationID = ap.ApplicationID
+            JOIN applicants a ON ap.AccountID = a.AccountID
+            WHERE CONCAT(a.FirstName, ' ', a.LastName) LIKE @search
+            ORDER BY s.InterviewDate DESC";
 
-                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@search", "%" + search + "%");
 
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-
                 da.Fill(dt);
 
                 dgvInterviews.DataSource = dt;
@@ -211,6 +222,17 @@ namespace HR_Login
             LoadInterviews();
             LoadInterviewStats();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LoadInterviews(txtSearch.Text.Trim());
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadInterviews(txtSearch.Text.Trim());
+        }
+
     }
 }
 
