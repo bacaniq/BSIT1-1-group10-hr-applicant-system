@@ -14,7 +14,7 @@ namespace HRApplicantSystem
     public partial class InterviewScheduleForm : Form
     {
         string connectionString =
-            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
+            "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
 
         public InterviewScheduleForm()
         {

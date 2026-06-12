@@ -14,7 +14,7 @@ namespace HRApplicantSystem
     public partial class InterviewForm : Form
     {
         string connectionString =
-            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
+            "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
 
         public InterviewForm()
         {
@@ -63,7 +63,7 @@ namespace HRApplicantSystem
         private int GetCount(string query)
         {
             string connectionString =
-            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
+            "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
