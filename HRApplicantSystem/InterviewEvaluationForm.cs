@@ -4,21 +4,23 @@ using MySql.Data.MySqlClient;
 
 namespace HRApplicantSystem
 {
-    public class InterviewEvaluationForm : Form
+    public partial class InterviewEvaluationForm : Form
     {
         private int _scheduleID;
         private int _applicationID;
 
-        private Label lblApplicantName, lblJobTitle, lblInterviewDate, lblInterviewStatus;
-        private Label valApplicantName, valJobTitle, valInterviewDate, valInterviewStatus;
-        private Label lblScore, lblResult, lblRemarks, lblTitle;
-        private TextBox txtScore, txtRemarks;
-        private ComboBox cmbResult;
-        private Button btnSave, btnCancel;
-        private Panel pnlInfo;
+        //private Label lblApplicantName, lblJobTitle, lblInterviewDate, lblInterviewStatus;
+        //private Label valApplicantName, valJobTitle, valInterviewDate, valInterviewStatus;
+        //private Label lblScore, lblResult, lblRemarks, lblTitle;
+        //private TextBox txtScore, txtRemarks;
+        //private ComboBox cmbResult;
+        //private Button btnSave, btnCancel;
+        //private Panel pnlInfo;
 
         public InterviewEvaluationForm(int scheduleID)
         {
+            MessageBox.Show("Schedule ID = " + scheduleID);
+
             _scheduleID = scheduleID;
             InitializeControls();
             LoadInterviewInfo();
@@ -179,7 +181,7 @@ namespace HRApplicantSystem
 
             try
             {
-                using (var conn = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;"))
+                using (var conn = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22"))
                 {
                     conn.Open();
 

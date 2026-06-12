@@ -31,100 +31,102 @@ namespace HR_Login
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            listView1 = new ListView();
-            ApplicantName = new ColumnHeader();
-            JobTitle = new ColumnHeader();
-            Status = new ColumnHeader();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ApplicantName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.JobTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(340, 66);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Screening";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(291, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Screening";
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { ApplicantName, JobTitle, Status });
-            listView1.Location = new Point(235, 106);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(288, 160);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ApplicantName,
+            this.JobTitle,
+            this.Status});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(201, 92);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(247, 139);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // ApplicantName
             // 
-            ApplicantName.Text = "ApplicantName";
+            this.ApplicantName.Text = "ApplicantName";
             // 
             // JobTitle
             // 
-            JobTitle.Text = "JobTitle";
+            this.JobTitle.Text = "JobTitle";
             // 
             // Status
             // 
-            Status.Text = "Status";
+            this.Status.Text = "Status";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(203, 284);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Remarks:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(174, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Remarks:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(264, 276);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(142, 23);
-            textBox1.TabIndex = 3;
+            this.textBox1.Location = new System.Drawing.Point(294, 239);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(122, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(245, 326);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 34);
-            button1.TabIndex = 4;
-            button1.Text = "Qualified";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(210, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 29);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Qualified";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(416, 330);
-            button2.Name = "button2";
-            button2.Size = new Size(107, 30);
-            button2.TabIndex = 5;
-            button2.Text = "Not Qualified";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Location = new System.Drawing.Point(357, 286);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 26);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Not Qualified";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // ScreeningForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(listView1);
-            Controls.Add(label1);
-            Name = "ScreeningForm";
-            Text = "ScreeningForm";
-            Load += ScreeningForm_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.label1);
+            this.Name = "ScreeningForm";
+            this.Text = "ScreeningForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

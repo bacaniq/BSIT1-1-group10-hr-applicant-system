@@ -1,0 +1,7 @@
+[33m2ea0158[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to origin/master
+[33md192bec[m HEAD@{1}: commit: Customized the UI, added designs and added some features in the Interview Module. Also fixed some bugs in the code
+[33m2ea0158[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: commit (merge): Fixed and revised some parts, added the screening module and Interview
+[33ma3b183c[m HEAD@{3}: commit: Fixed and revised some parts, added the screening module and Interview
+[33m3ef4bbb[m HEAD@{4}: commit: Connected the database into the forms
+[33m70ee199[m HEAD@{5}: commit: Finished the HR Login UI and starting to work on the HR Dashboard UI
+[33m26d627c[m HEAD@{6}: clone: from https://github.com/bacaniq/BSIT1-1-group10-hr-applicant-system

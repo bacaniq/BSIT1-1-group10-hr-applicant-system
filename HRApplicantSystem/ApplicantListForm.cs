@@ -5,18 +5,18 @@ using MySql.Data.MySqlClient;
 
 namespace HRApplicantSystem
 {
-    
-    public class ApplicantListForm : Form
+
+    public partial class ApplicantListForm : Form
     {
-        
-        private DataGridView dgvApplicants;
-        private TextBox txtSearch;
-        private ComboBox cmbStatusFilter;
-        private Button btnSearch;
-        private Button btnReview;
-        private Label lblTitle;
-        private Label lblSearch;
-        private Label lblStatus;
+
+        //private DataGridView dgvApplicants;
+        //private TextBox txtSearch;
+        //private ComboBox cmbStatusFilter;
+        //private Button btnSearch;
+        //private Button btnReview;
+        //private Label lblTitle;
+        //private Label lblSearch;
+        //private Label lblStatus;
 
         public ApplicantListForm()
         {
@@ -91,7 +91,7 @@ namespace HRApplicantSystem
             });
         }
 
-        
+
         private void LoadApplicants(string search = "", string statusFilter = "All")
         {
             try
@@ -378,7 +378,7 @@ namespace HRApplicantSystem
             }
         }
 
-       
+
         private void BtnLockReview_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show(
