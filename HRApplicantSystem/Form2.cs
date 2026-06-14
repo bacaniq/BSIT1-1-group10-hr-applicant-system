@@ -22,7 +22,7 @@ namespace ApplicantRegistrationFormFull
 
         private void tbConRegister_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Ralph10272006.";
 
             string FirstName = textBox1.Text;
             string LastName = textBox2.Text;
