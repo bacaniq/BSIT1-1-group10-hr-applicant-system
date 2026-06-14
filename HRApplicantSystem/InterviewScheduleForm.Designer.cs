@@ -28,189 +28,188 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbApplicant = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpInterviewDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpInterviewTime = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtInterviewer = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbMode = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            cmbApplicant = new ComboBox();
+            label3 = new Label();
+            dtpInterviewDate = new DateTimePicker();
+            dtpInterviewTime = new DateTimePicker();
+            label4 = new Label();
+            txtInterviewer = new TextBox();
+            label5 = new Label();
+            cmbMode = new ComboBox();
+            label6 = new Label();
+            txtLocation = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Schedule Interview";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(148, 9);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 30);
+            label1.TabIndex = 0;
+            label1.Text = "Schedule Interview";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(108, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Applicant:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(108, 63);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 13);
+            label2.TabIndex = 1;
+            label2.Text = "Applicant:";
             // 
             // cmbApplicant
             // 
-            this.cmbApplicant.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbApplicant.FormattingEnabled = true;
-            this.cmbApplicant.Location = new System.Drawing.Point(183, 60);
-            this.cmbApplicant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbApplicant.Name = "cmbApplicant";
-            this.cmbApplicant.Size = new System.Drawing.Size(140, 21);
-            this.cmbApplicant.TabIndex = 2;
+            cmbApplicant.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbApplicant.FormattingEnabled = true;
+            cmbApplicant.Location = new Point(183, 60);
+            cmbApplicant.Margin = new Padding(4, 3, 4, 3);
+            cmbApplicant.Name = "cmbApplicant";
+            cmbApplicant.Size = new Size(140, 21);
+            cmbApplicant.TabIndex = 2;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(83, 103);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Interview Date:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(83, 103);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(85, 13);
+            label3.TabIndex = 3;
+            label3.Text = "Interview Date:";
             // 
             // dtpInterviewDate
             // 
-            this.dtpInterviewDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInterviewDate.Location = new System.Drawing.Point(183, 96);
-            this.dtpInterviewDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dtpInterviewDate.Name = "dtpInterviewDate";
-            this.dtpInterviewDate.Size = new System.Drawing.Size(130, 22);
-            this.dtpInterviewDate.TabIndex = 4;
+            dtpInterviewDate.Format = DateTimePickerFormat.Short;
+            dtpInterviewDate.Location = new Point(183, 96);
+            dtpInterviewDate.Margin = new Padding(4, 3, 4, 3);
+            dtpInterviewDate.Name = "dtpInterviewDate";
+            dtpInterviewDate.Size = new Size(130, 22);
+            dtpInterviewDate.TabIndex = 4;
             // 
             // dtpInterviewTime
             // 
-            this.dtpInterviewTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpInterviewTime.Location = new System.Drawing.Point(320, 96);
-            this.dtpInterviewTime.Name = "dtpInterviewTime";
-            this.dtpInterviewTime.ShowUpDown = true;
-            this.dtpInterviewTime.Size = new System.Drawing.Size(88, 22);
-            this.dtpInterviewTime.TabIndex = 5;
+            dtpInterviewTime.Format = DateTimePickerFormat.Time;
+            dtpInterviewTime.Location = new Point(320, 96);
+            dtpInterviewTime.Name = "dtpInterviewTime";
+            dtpInterviewTime.ShowUpDown = true;
+            dtpInterviewTime.Size = new Size(88, 22);
+            dtpInterviewTime.TabIndex = 5;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(100, 140);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Interviewer:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(100, 140);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 13);
+            label4.TabIndex = 6;
+            label4.Text = "Interviewer:";
             // 
             // txtInterviewer
             // 
-            this.txtInterviewer.Location = new System.Drawing.Point(183, 137);
-            this.txtInterviewer.Name = "txtInterviewer";
-            this.txtInterviewer.Size = new System.Drawing.Size(199, 22);
-            this.txtInterviewer.TabIndex = 7;
+            txtInterviewer.Location = new Point(183, 137);
+            txtInterviewer.Name = "txtInterviewer";
+            txtInterviewer.Size = new Size(199, 22);
+            txtInterviewer.TabIndex = 7;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(127, 177);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Mode:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(127, 177);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 13);
+            label5.TabIndex = 8;
+            label5.Text = "Mode:";
             // 
             // cmbMode
             // 
-            this.cmbMode.FormattingEnabled = true;
-            this.cmbMode.Items.AddRange(new object[] {
-            "Online",
-            "Onsite"});
-            this.cmbMode.Location = new System.Drawing.Point(183, 174);
-            this.cmbMode.Name = "cmbMode";
-            this.cmbMode.Size = new System.Drawing.Size(121, 21);
-            this.cmbMode.TabIndex = 9;
+            cmbMode.FormattingEnabled = true;
+            cmbMode.Items.AddRange(new object[] { "Online", "Onsite" });
+            cmbMode.Location = new Point(183, 174);
+            cmbMode.Name = "cmbMode";
+            cmbMode.Size = new Size(121, 21);
+            cmbMode.TabIndex = 9;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(113, 218);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Location:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(113, 218);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 13);
+            label6.TabIndex = 10;
+            label6.Text = "Location:";
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(183, 215);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(156, 22);
-            this.txtLocation.TabIndex = 11;
+            txtLocation.Location = new Point(183, 215);
+            txtLocation.Name = "txtLocation";
+            txtLocation.Size = new Size(156, 22);
+            txtLocation.TabIndex = 11;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(130, 295);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Location = new Point(130, 295);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 12;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(264, 295);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.Location = new Point(264, 295);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 13;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // InterviewScheduleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cmbMode);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtInterviewer);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpInterviewTime);
-            this.Controls.Add(this.dtpInterviewDate);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbApplicant);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "InterviewScheduleForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "InterviewScheduleForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(484, 361);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(txtLocation);
+            Controls.Add(label6);
+            Controls.Add(cmbMode);
+            Controls.Add(label5);
+            Controls.Add(txtInterviewer);
+            Controls.Add(label4);
+            Controls.Add(dtpInterviewTime);
+            Controls.Add(dtpInterviewDate);
+            Controls.Add(label3);
+            Controls.Add(cmbApplicant);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "InterviewScheduleForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "InterviewScheduleForm";
+            Load += InterviewScheduleForm_Load_1;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

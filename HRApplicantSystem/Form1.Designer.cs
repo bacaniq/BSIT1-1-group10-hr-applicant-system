@@ -42,7 +42,7 @@
             // tblogin
             // 
             tblogin.BackColor = SystemColors.ActiveCaption;
-            tblogin.Location = new Point(410, 340);
+            tblogin.Location = new Point(182, 304);
             tblogin.Margin = new Padding(4, 3, 4, 3);
             tblogin.Name = "tblogin";
             tblogin.Size = new Size(104, 31);
@@ -55,7 +55,7 @@
             // 
             tbforgotpassword.AutoSize = true;
             tbforgotpassword.LinkColor = Color.FromArgb(0, 0, 192);
-            tbforgotpassword.Location = new Point(534, 435);
+            tbforgotpassword.Location = new Point(323, 459);
             tbforgotpassword.Margin = new Padding(4, 0, 4, 0);
             tbforgotpassword.Name = "tbforgotpassword";
             tbforgotpassword.Size = new Size(95, 15);
@@ -68,7 +68,7 @@
             // 
             tbregisteraccount.AutoSize = true;
             tbregisteraccount.LinkColor = Color.FromArgb(0, 0, 192);
-            tbregisteraccount.Location = new Point(266, 435);
+            tbregisteraccount.Location = new Point(21, 459);
             tbregisteraccount.Margin = new Padding(4, 0, 4, 0);
             tbregisteraccount.Name = "tbregisteraccount";
             tbregisteraccount.Size = new Size(113, 15);
@@ -79,7 +79,7 @@
             // 
             // tbboxpassword
             // 
-            tbboxpassword.Location = new Point(326, 290);
+            tbboxpassword.Location = new Point(94, 236);
             tbboxpassword.Margin = new Padding(4, 3, 4, 3);
             tbboxpassword.Name = "tbboxpassword";
             tbboxpassword.Size = new Size(308, 23);
@@ -87,7 +87,7 @@
             // 
             // tbboxemail
             // 
-            tbboxemail.Location = new Point(326, 235);
+            tbboxemail.Location = new Point(94, 181);
             tbboxemail.Margin = new Padding(4, 3, 4, 3);
             tbboxemail.Name = "tbboxemail";
             tbboxemail.Size = new Size(308, 23);
@@ -96,7 +96,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(253, 293);
+            label2.Location = new Point(21, 239);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
@@ -106,7 +106,7 @@
             // tbemail
             // 
             tbemail.AutoSize = true;
-            tbemail.Location = new Point(278, 239);
+            tbemail.Location = new Point(46, 185);
             tbemail.Margin = new Padding(4, 0, 4, 0);
             tbemail.Name = "tbemail";
             tbemail.Size = new Size(39, 15);
@@ -116,18 +116,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 66.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(144, 70);
+            label1.Font = new Font("Microsoft Sans Serif", 40F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(19, 41);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(663, 101);
+            label1.Size = new Size(413, 63);
             label1.TabIndex = 17;
             label1.Text = "Applicant Login";
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(395, 391);
+            linkLabel1.Location = new Point(163, 381);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(140, 15);
             linkLabel1.TabIndex = 25;
@@ -139,7 +139,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(454, 500);
             Controls.Add(linkLabel1);
             Controls.Add(tblogin);
             Controls.Add(tbforgotpassword);

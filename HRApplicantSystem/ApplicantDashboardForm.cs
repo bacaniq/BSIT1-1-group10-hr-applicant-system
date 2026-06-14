@@ -29,7 +29,7 @@ namespace HRApplicantSystem
         {
             try
             {
-                var connectionString = DBConnection.GetConnection();
+                var connectionString = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;");
                 connectionString.Open();
 
                 string nameQuery = "SELECT FirstName, LastName FROM applicants WHERE AccountID = " + ApplicantID;
@@ -89,12 +89,6 @@ namespace HRApplicantSystem
         {
             MyDocumentsForm docsForm = new MyDocumentsForm();
             docsForm.Show();
-        }
-
-        private void btnApplication_Click_1(object sender, EventArgs e)
-        {
-            MyApplicationPage.Form4 myApplicationPage = new MyApplicationPage.Form4();
-            myApplicationPage.ShowDialog();
         }
 
         private void btnProfile_Click_1(object sender, EventArgs e)

@@ -12,6 +12,8 @@ namespace HRApplicantSystem
         public Form3()
         {
             InitializeComponent();
+            tbNewPass.PasswordChar = '•';
+            tbConfirmNewPass.PasswordChar = '•';
         }
 
         private string HashPassword(string password)
@@ -21,7 +23,7 @@ namespace HRApplicantSystem
         private void tbpasswordchange_Click(object sender, EventArgs e)
         {
 
-            string connStr = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            string connStr = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;";
 
             string email = tbstoredemail.Text.Trim();
             string newPassword = tbNewPass.Text.Trim();
@@ -91,6 +93,16 @@ namespace HRApplicantSystem
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void tbNewPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbConfirmNewPass_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
 
         private void tbstoredemail_TextChanged(object sender, EventArgs e)
