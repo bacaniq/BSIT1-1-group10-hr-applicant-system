@@ -226,5 +226,10 @@ namespace HRApplicantSystem
                 MessageBox.Show("Error saving evaluation: " + ex.Message);
             }
         }
+
+        private void InterviewEvaluationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

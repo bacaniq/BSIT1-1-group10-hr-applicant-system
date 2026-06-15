@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvInterviews = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnInterview = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -50,6 +49,8 @@
             this.lblFailedTitle = new System.Windows.Forms.Label();
             this.lblFailed = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInterviews)).BeginInit();
             this.pnlTotal.SuspendLayout();
             this.pnlSchedule.SuspendLayout();
@@ -64,24 +65,18 @@
             this.dgvInterviews.Name = "dgvInterviews";
             this.dgvInterviews.Size = new System.Drawing.Size(776, 216);
             this.dgvInterviews.TabIndex = 4;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(33, 195);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(212, 20);
-            this.txtSearch.TabIndex = 6;
-            this.txtSearch.Text = "Search Applicant: ____________________";
+            this.dgvInterviews.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInterviews_CellContentClick);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(261, 195);
+            this.btnSearch.Location = new System.Drawing.Point(261, 192);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 20);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInterview
             // 
@@ -176,7 +171,7 @@
             this.lblTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalTitle.Location = new System.Drawing.Point(44, 25);
             this.lblTotalTitle.Name = "lblTotalTitle";
-            this.lblTotalTitle.Size = new System.Drawing.Size(127, 17);
+            this.lblTotalTitle.Size = new System.Drawing.Size(130, 17);
             this.lblTotalTitle.TabIndex = 16;
             this.lblTotalTitle.Text = "📋 Total Interviews";
             // 
@@ -286,11 +281,31 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Interview Management";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Search Applicant:";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(127, 192);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(127, 20);
+            this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // InterviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlFailed);
             this.Controls.Add(this.pnlPassed);
@@ -303,7 +318,6 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnInterview);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvInterviews);
             this.Name = "InterviewForm";
             this.Text = "Interview Management";
@@ -324,7 +338,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvInterviews;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnInterview;
         private System.Windows.Forms.Button btnEdit;
@@ -345,5 +358,7 @@
         private System.Windows.Forms.Label lblPassedTitle;
         private System.Windows.Forms.Label lblFailedTitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

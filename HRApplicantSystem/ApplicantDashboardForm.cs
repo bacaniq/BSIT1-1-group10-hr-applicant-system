@@ -29,7 +29,7 @@ namespace HRApplicantSystem
         {
             try
             {
-                var connectionString = DBConnection.GetConnection();
+                var connectionString = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;");
                 connectionString.Open();
 
                 string nameQuery = "SELECT FirstName, LastName FROM applicants WHERE AccountID = " + ApplicantID;
@@ -41,7 +41,14 @@ namespace HRApplicantSystem
                 }
                 nameReader.Close();
 
-                string statusQuery = "SELECT Status FROM Applications WHERE AccountID = " + ApplicantID;
+                string statusQuery = @"
+                SELECT Status FROM Applications 
+                WHERE AccountID = " + ApplicantID + @"
+                ORDER BY 
+                CASE WHEN Status = 'Submitted' THEN 0 ELSE 1 END ASC,
+                ApplicationID DESC
+                LIMIT 1";
+
                 MySqlCommand statusCmd = new MySqlCommand(statusQuery, connectionString);
                 MySqlDataReader statusReader = statusCmd.ExecuteReader();
                 if (statusReader.Read())
@@ -89,12 +96,6 @@ namespace HRApplicantSystem
         {
             MyDocumentsForm docsForm = new MyDocumentsForm();
             docsForm.Show();
-        }
-
-        private void btnApplication_Click_1(object sender, EventArgs e)
-        {
-            MyApplicationPage.Form4 myApplicationPage = new MyApplicationPage.Form4();
-            myApplicationPage.ShowDialog();
         }
 
         private void btnProfile_Click_1(object sender, EventArgs e)
