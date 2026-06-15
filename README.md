@@ -4,7 +4,7 @@
 
 * Bacani
 * Del Rosario
-* Sietreales
+* Sietereales
 * Sunglao
 * Vierneza
 
