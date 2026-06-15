@@ -41,16 +41,18 @@
             LBDateApplied = new Label();
             LBJobPosition = new Label();
             LVStatus = new ListView();
+            JobTitle = new ColumnHeader();
             Status = new ColumnHeader();
             AppliedDate = new ColumnHeader();
             label1 = new Label();
-            JobTitle = new ColumnHeader();
+            btSubmit = new Button();
+            btWithdraw = new Button();
             SuspendLayout();
             // 
             // Lblank4
             // 
             Lblank4.AutoSize = true;
-            Lblank4.Location = new Point(187, 421);
+            Lblank4.Location = new Point(187, 435);
             Lblank4.Name = "Lblank4";
             Lblank4.Size = new Size(153, 15);
             Lblank4.TabIndex = 35;
@@ -87,7 +89,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 9.75F);
-            label5.Location = new Point(21, 470);
+            label5.Location = new Point(21, 484);
             label5.Name = "label5";
             label5.Size = new Size(87, 17);
             label5.TabIndex = 31;
@@ -97,7 +99,7 @@
             // 
             LBHRRemark.Columns.AddRange(new ColumnHeader[] { HRRemark });
             LBHRRemark.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBHRRemark.Location = new Point(21, 492);
+            LBHRRemark.Location = new Point(21, 506);
             LBHRRemark.Name = "LBHRRemark";
             LBHRRemark.Size = new Size(369, 132);
             LBHRRemark.TabIndex = 30;
@@ -112,7 +114,7 @@
             // 
             LBSchedule.AutoSize = true;
             LBSchedule.Font = new Font("Century Gothic", 9.75F);
-            LBSchedule.Location = new Point(21, 421);
+            LBSchedule.Location = new Point(21, 435);
             LBSchedule.Name = "LBSchedule";
             LBSchedule.Size = new Size(133, 17);
             LBSchedule.TabIndex = 29;
@@ -169,6 +171,10 @@
             LVStatus.UseCompatibleStateImageBehavior = false;
             LVStatus.View = View.Details;
             // 
+            // JobTitle
+            // 
+            JobTitle.Text = "Job Title";
+            // 
             // Status
             // 
             Status.Text = "Status";
@@ -184,19 +190,37 @@
             label1.ForeColor = SystemColors.InactiveCaptionText;
             label1.Location = new Point(12, 23);
             label1.Name = "label1";
-            label1.Size = new Size(405, 46);
+            label1.Size = new Size(396, 46);
             label1.TabIndex = 23;
-            label1.Text = "My Application + Status";
+            label1.Text = "My Application / Status";
             // 
-            // JobTitle
+            // btSubmit
             // 
-            JobTitle.Text = "Job Title";
+            btSubmit.Location = new Point(21, 387);
+            btSubmit.Name = "btSubmit";
+            btSubmit.Size = new Size(77, 23);
+            btSubmit.TabIndex = 36;
+            btSubmit.Text = "Submit ";
+            btSubmit.UseVisualStyleBackColor = true;
+            btSubmit.Click += btSubmit_Click;
+            // 
+            // btWithdraw
+            // 
+            btWithdraw.Location = new Point(303, 387);
+            btWithdraw.Name = "btWithdraw";
+            btWithdraw.Size = new Size(87, 23);
+            btWithdraw.TabIndex = 37;
+            btWithdraw.Text = "Withdraw";
+            btWithdraw.UseVisualStyleBackColor = true;
+            btWithdraw.Click += btWithdraw_Click;
             // 
             // ApplicationStatusForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(422, 652);
+            Controls.Add(btWithdraw);
+            Controls.Add(btSubmit);
             Controls.Add(Lblank4);
             Controls.Add(Lblank3);
             Controls.Add(Lblank2);
@@ -236,5 +260,7 @@
         private ColumnHeader AppliedDate;
         private Label label1;
         private ColumnHeader JobTitle;
+        private Button btSubmit;
+        private Button btWithdraw;
     }
 }

@@ -41,7 +41,14 @@ namespace HRApplicantSystem
                 }
                 nameReader.Close();
 
-                string statusQuery = "SELECT Status FROM Applications WHERE AccountID = " + ApplicantID;
+                string statusQuery = @"
+                SELECT Status FROM Applications 
+                WHERE AccountID = " + ApplicantID + @"
+                ORDER BY 
+                CASE WHEN Status = 'Submitted' THEN 0 ELSE 1 END ASC,
+                ApplicationID DESC
+                LIMIT 1";
+
                 MySqlCommand statusCmd = new MySqlCommand(statusQuery, connectionString);
                 MySqlDataReader statusReader = statusCmd.ExecuteReader();
                 if (statusReader.Read())

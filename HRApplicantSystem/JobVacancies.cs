@@ -22,7 +22,7 @@ namespace HRApplicantSystem
             {
                 listViewJobs.Items.Clear();
 
-                var conn = DBConnection.GetConnection();
+                var conn = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;");
                 conn.Open();
 
                 string query = "SELECT JobID, JobTitle, DepartmentID, Status FROM JobVacancies WHERE Status = 'Open' AND JobTitle LIKE '%" + search + "%'";
@@ -95,7 +95,7 @@ namespace HRApplicantSystem
 
             try
             {
-                using (var conn = DBConnection.GetConnection())
+                using (var conn = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;"))
                 {
                     conn.Open();
 
@@ -118,7 +118,7 @@ namespace HRApplicantSystem
                     string applyQuery =
                         "INSERT INTO Applications " +
                         "(AccountID, JobID, Status) " +
-                        "VALUES (@AccountID, @JobID, 'Submitted')";
+                        "VALUES (@AccountID, @JobID, 'Applied')";
 
                     MySqlCommand applyCmd = new MySqlCommand(applyQuery, conn);
 
@@ -127,7 +127,7 @@ namespace HRApplicantSystem
 
                     applyCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Application submitted successfully!");
+                    MessageBox.Show("Successfully Applied!");
                 }
             }
             catch (Exception ex)
