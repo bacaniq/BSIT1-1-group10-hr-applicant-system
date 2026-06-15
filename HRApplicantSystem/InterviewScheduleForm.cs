@@ -33,11 +33,13 @@ namespace HRApplicantSystem
                 CONCAT(FirstName, ' ', LastName) AS ApplicantName
             FROM applications ap
             JOIN applicants a ON ap.AccountID = a.AccountID
-            WHERE ap.Status = 'Interview'";
+            WHERE ap.Status = 'Shortlisted'";
 
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
+                MessageBox.Show("Rows found: " + dt.Rows.Count);
 
                 cmbApplicant.DataSource = dt;
                 cmbApplicant.DisplayMember = "ApplicantName";
@@ -128,6 +130,11 @@ namespace HRApplicantSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void InterviewScheduleForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

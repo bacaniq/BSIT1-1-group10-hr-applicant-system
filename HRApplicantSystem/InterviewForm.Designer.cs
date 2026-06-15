@@ -65,6 +65,7 @@
             this.dgvInterviews.Name = "dgvInterviews";
             this.dgvInterviews.Size = new System.Drawing.Size(776, 216);
             this.dgvInterviews.TabIndex = 4;
+            this.dgvInterviews.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInterviews_CellContentClick);
             // 
             // btnSearch
             // 
@@ -75,6 +76,7 @@
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInterview
             // 
@@ -169,7 +171,7 @@
             this.lblTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalTitle.Location = new System.Drawing.Point(44, 25);
             this.lblTotalTitle.Name = "lblTotalTitle";
-            this.lblTotalTitle.Size = new System.Drawing.Size(127, 17);
+            this.lblTotalTitle.Size = new System.Drawing.Size(130, 17);
             this.lblTotalTitle.TabIndex = 16;
             this.lblTotalTitle.Text = "📋 Total Interviews";
             // 

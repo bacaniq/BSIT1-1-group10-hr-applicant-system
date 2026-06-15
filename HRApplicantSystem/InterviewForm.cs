@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HRApplicantSystem;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,7 +96,7 @@ namespace HRApplicantSystem
         private void InterviewForm_Load(object sender, EventArgs e)
         {
             LoadInterviewStats();
-            LoadInterviews(); 
+            LoadInterviews();
         }
 
         private void btnInterview_Click(object sender, EventArgs e)
@@ -207,9 +208,7 @@ namespace HRApplicantSystem
             LoadInterviewStats();
         }
 
-        private void dgvInterviews_CellDoubleClick(
-    object sender,
-    DataGridViewCellEventArgs e)
+        private void dgvInterviews_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (selectedScheduleID == 0)
                 return;
@@ -233,6 +232,6 @@ namespace HRApplicantSystem
             LoadInterviews(txtSearch.Text.Trim());
         }
 
+
     }
 }
-
