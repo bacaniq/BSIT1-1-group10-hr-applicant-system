@@ -9,8 +9,7 @@ namespace HRApplicantSystem
     public static class DatabaseHelper
     {
         private const string ConnStr =
-            "Server=localhost;Port=3306;Database=hr_applicant_system;" +
-            "Uid=root;Pwd=Ralph10272006.;";
+            "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
 
         private static MySqlConnection GetConnection()
         {
