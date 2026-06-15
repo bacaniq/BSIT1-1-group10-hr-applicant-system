@@ -13,6 +13,8 @@ namespace ApplicantRegistrationFormFull
         public Form2()
         {
             InitializeComponent();
+            tbRegPassword.PasswordChar = '•';
+            tbConfRegPassword.PasswordChar = '•';
         }
 
         private string HashPassword(string password)
@@ -22,13 +24,13 @@ namespace ApplicantRegistrationFormFull
 
         private void tbConRegister_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;";
 
             string FirstName = textBox1.Text;
             string LastName = textBox2.Text;
             string Email = textBox3.Text;
-            string Password = textBox4.Text;
-            string ConfirmPassword = textBox5.Text;
+            string Password = tbRegPassword.Text;
+            string ConfirmPassword = tbConfRegPassword.Text;
 
             if (string.IsNullOrWhiteSpace(FirstName) ||
             string.IsNullOrWhiteSpace(LastName) ||
@@ -130,12 +132,22 @@ namespace ApplicantRegistrationFormFull
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
+            tbRegPassword.Clear();
+            tbConfRegPassword.Clear();
         }
 
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbRegPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbRegConfPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

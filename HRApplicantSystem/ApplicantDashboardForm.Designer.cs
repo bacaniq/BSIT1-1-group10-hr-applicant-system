@@ -37,7 +37,6 @@
             lblInterviewValue = new Label();
             btnProfile = new Button();
             btnJobs = new Button();
-            btnApplication = new Button();
             btnDocuments = new Button();
             btnStatus = new Button();
             btnLogout = new Button();
@@ -138,18 +137,6 @@
             btnJobs.UseVisualStyleBackColor = false;
             btnJobs.Click += btnJobs_Click;
             // 
-            // btnApplication
-            // 
-            btnApplication.BackColor = Color.SteelBlue;
-            btnApplication.ForeColor = Color.White;
-            btnApplication.Location = new Point(92, 352);
-            btnApplication.Name = "btnApplication";
-            btnApplication.Size = new Size(153, 57);
-            btnApplication.TabIndex = 9;
-            btnApplication.Text = "My Application";
-            btnApplication.UseVisualStyleBackColor = false;
-            btnApplication.Click += btnApplication_Click_1;
-            // 
             // btnDocuments
             // 
             btnDocuments.BackColor = Color.SteelBlue;
@@ -170,7 +157,7 @@
             btnStatus.Name = "btnStatus";
             btnStatus.Size = new Size(153, 57);
             btnStatus.TabIndex = 11;
-            btnStatus.Text = "Application Status";
+            btnStatus.Text = "My Application / Status";
             btnStatus.UseVisualStyleBackColor = false;
             btnStatus.Click += btnStatus_Click_1;
             // 
@@ -194,7 +181,6 @@
             Controls.Add(btnLogout);
             Controls.Add(btnStatus);
             Controls.Add(btnDocuments);
-            Controls.Add(btnApplication);
             Controls.Add(btnJobs);
             Controls.Add(btnProfile);
             Controls.Add(lblInterviewValue);
@@ -223,7 +209,6 @@
         private System.Windows.Forms.Label lblInterviewValue;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnJobs;
-        private System.Windows.Forms.Button btnApplication;
         private System.Windows.Forms.Button btnDocuments;
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.Button btnLogout;

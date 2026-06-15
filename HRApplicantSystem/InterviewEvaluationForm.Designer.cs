@@ -15,182 +15,214 @@ namespace HRApplicantSystem
 
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.pnlInfo = new System.Windows.Forms.Panel();
-            this.lblApplicantName = new System.Windows.Forms.Label();
-            this.valApplicantName = new System.Windows.Forms.Label();
-            this.lblJobTitle = new System.Windows.Forms.Label();
-            this.valJobTitle = new System.Windows.Forms.Label();
-            this.lblInterviewDate = new System.Windows.Forms.Label();
-            this.valInterviewDate = new System.Windows.Forms.Label();
-            this.lblInterviewStatus = new System.Windows.Forms.Label();
-            this.valInterviewStatus = new System.Windows.Forms.Label();
-            this.lblScore = new System.Windows.Forms.Label();
-            this.txtScore = new System.Windows.Forms.TextBox();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.cmbResult = new System.Windows.Forms.ComboBox();
-            this.lblRemarks = new System.Windows.Forms.Label();
-            this.txtRemarks = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.pnlInfo.SuspendLayout();
-            this.SuspendLayout();
-
+            lblTitle = new Label();
+            pnlInfo = new Panel();
+            lblApplicantName = new Label();
+            valApplicantName = new Label();
+            lblJobTitle = new Label();
+            valJobTitle = new Label();
+            lblInterviewDate = new Label();
+            valInterviewDate = new Label();
+            lblInterviewStatus = new Label();
+            valInterviewStatus = new Label();
+            lblScore = new Label();
+            txtScore = new TextBox();
+            lblResult = new Label();
+            cmbResult = new ComboBox();
+            lblRemarks = new Label();
+            txtRemarks = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            pnlInfo.SuspendLayout();
+            SuspendLayout();
+            // 
             // lblTitle
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(20, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Interview Evaluation";
-
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Arial", 14F, FontStyle.Bold);
+            lblTitle.Location = new Point(20, 15);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(197, 22);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Interview Evaluation";
+            // 
             // pnlInfo
-            this.pnlInfo.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-            this.pnlInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlInfo.Controls.Add(this.lblApplicantName);
-            this.pnlInfo.Controls.Add(this.valApplicantName);
-            this.pnlInfo.Controls.Add(this.lblJobTitle);
-            this.pnlInfo.Controls.Add(this.valJobTitle);
-            this.pnlInfo.Controls.Add(this.lblInterviewDate);
-            this.pnlInfo.Controls.Add(this.valInterviewDate);
-            this.pnlInfo.Controls.Add(this.lblInterviewStatus);
-            this.pnlInfo.Controls.Add(this.valInterviewStatus);
-            this.pnlInfo.Location = new System.Drawing.Point(10, 50);
-            this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(510, 120);
-            this.pnlInfo.TabIndex = 1;
-
+            // 
+            pnlInfo.BackColor = Color.FromArgb(240, 240, 240);
+            pnlInfo.BorderStyle = BorderStyle.FixedSingle;
+            pnlInfo.Controls.Add(lblApplicantName);
+            pnlInfo.Controls.Add(valApplicantName);
+            pnlInfo.Controls.Add(lblJobTitle);
+            pnlInfo.Controls.Add(valJobTitle);
+            pnlInfo.Controls.Add(lblInterviewDate);
+            pnlInfo.Controls.Add(valInterviewDate);
+            pnlInfo.Controls.Add(lblInterviewStatus);
+            pnlInfo.Controls.Add(valInterviewStatus);
+            pnlInfo.Location = new Point(10, 50);
+            pnlInfo.Name = "pnlInfo";
+            pnlInfo.Size = new Size(510, 120);
+            pnlInfo.TabIndex = 1;
+            // 
             // lblApplicantName
-            this.lblApplicantName.AutoSize = true;
-            this.lblApplicantName.Location = new System.Drawing.Point(10, 10);
-            this.lblApplicantName.Name = "lblApplicantName";
-            this.lblApplicantName.TabIndex = 0;
-            this.lblApplicantName.Text = "Applicant:";
-
+            // 
+            lblApplicantName.AutoSize = true;
+            lblApplicantName.Location = new Point(10, 10);
+            lblApplicantName.Name = "lblApplicantName";
+            lblApplicantName.Size = new Size(61, 15);
+            lblApplicantName.TabIndex = 0;
+            lblApplicantName.Text = "Applicant:";
+            // 
             // valApplicantName
-            this.valApplicantName.AutoSize = true;
-            this.valApplicantName.Location = new System.Drawing.Point(160, 10);
-            this.valApplicantName.Name = "valApplicantName";
-            this.valApplicantName.TabIndex = 1;
-
+            // 
+            valApplicantName.AutoSize = true;
+            valApplicantName.Location = new Point(160, 10);
+            valApplicantName.Name = "valApplicantName";
+            valApplicantName.Size = new Size(0, 15);
+            valApplicantName.TabIndex = 1;
+            // 
             // lblJobTitle
-            this.lblJobTitle.AutoSize = true;
-            this.lblJobTitle.Location = new System.Drawing.Point(10, 35);
-            this.lblJobTitle.Name = "lblJobTitle";
-            this.lblJobTitle.TabIndex = 2;
-            this.lblJobTitle.Text = "Job Applied:";
-
+            // 
+            lblJobTitle.AutoSize = true;
+            lblJobTitle.Location = new Point(10, 35);
+            lblJobTitle.Name = "lblJobTitle";
+            lblJobTitle.Size = new Size(72, 15);
+            lblJobTitle.TabIndex = 2;
+            lblJobTitle.Text = "Job Applied:";
+            // 
             // valJobTitle
-            this.valJobTitle.AutoSize = true;
-            this.valJobTitle.Location = new System.Drawing.Point(160, 35);
-            this.valJobTitle.Name = "valJobTitle";
-            this.valJobTitle.TabIndex = 3;
-
+            // 
+            valJobTitle.AutoSize = true;
+            valJobTitle.Location = new Point(160, 35);
+            valJobTitle.Name = "valJobTitle";
+            valJobTitle.Size = new Size(0, 15);
+            valJobTitle.TabIndex = 3;
+            // 
             // lblInterviewDate
-            this.lblInterviewDate.AutoSize = true;
-            this.lblInterviewDate.Location = new System.Drawing.Point(10, 60);
-            this.lblInterviewDate.Name = "lblInterviewDate";
-            this.lblInterviewDate.TabIndex = 4;
-            this.lblInterviewDate.Text = "Interview Date:";
-
+            // 
+            lblInterviewDate.AutoSize = true;
+            lblInterviewDate.Location = new Point(10, 60);
+            lblInterviewDate.Name = "lblInterviewDate";
+            lblInterviewDate.Size = new Size(85, 15);
+            lblInterviewDate.TabIndex = 4;
+            lblInterviewDate.Text = "Interview Date:";
+            // 
             // valInterviewDate
-            this.valInterviewDate.AutoSize = true;
-            this.valInterviewDate.Location = new System.Drawing.Point(160, 60);
-            this.valInterviewDate.Name = "valInterviewDate";
-            this.valInterviewDate.TabIndex = 5;
-
+            // 
+            valInterviewDate.AutoSize = true;
+            valInterviewDate.Location = new Point(160, 60);
+            valInterviewDate.Name = "valInterviewDate";
+            valInterviewDate.Size = new Size(0, 15);
+            valInterviewDate.TabIndex = 5;
+            // 
             // lblInterviewStatus
-            this.lblInterviewStatus.AutoSize = true;
-            this.lblInterviewStatus.Location = new System.Drawing.Point(10, 85);
-            this.lblInterviewStatus.Name = "lblInterviewStatus";
-            this.lblInterviewStatus.TabIndex = 6;
-            this.lblInterviewStatus.Text = "Interview Status:";
-
+            // 
+            lblInterviewStatus.AutoSize = true;
+            lblInterviewStatus.Location = new Point(10, 85);
+            lblInterviewStatus.Name = "lblInterviewStatus";
+            lblInterviewStatus.Size = new Size(93, 15);
+            lblInterviewStatus.TabIndex = 6;
+            lblInterviewStatus.Text = "Interview Status:";
+            // 
             // valInterviewStatus
-            this.valInterviewStatus.AutoSize = true;
-            this.valInterviewStatus.Location = new System.Drawing.Point(160, 85);
-            this.valInterviewStatus.Name = "valInterviewStatus";
-            this.valInterviewStatus.TabIndex = 7;
-
+            // 
+            valInterviewStatus.AutoSize = true;
+            valInterviewStatus.Location = new Point(160, 85);
+            valInterviewStatus.Name = "valInterviewStatus";
+            valInterviewStatus.Size = new Size(0, 15);
+            valInterviewStatus.TabIndex = 7;
+            // 
             // lblScore
-            this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(20, 190);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.TabIndex = 2;
-            this.lblScore.Text = "Score (0-100):";
-
+            // 
+            lblScore.AutoSize = true;
+            lblScore.Location = new Point(20, 190);
+            lblScore.Name = "lblScore";
+            lblScore.Size = new Size(79, 15);
+            lblScore.TabIndex = 2;
+            lblScore.Text = "Score (0-100):";
+            // 
             // txtScore
-            this.txtScore.Location = new System.Drawing.Point(160, 187);
-            this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(100, 23);
-            this.txtScore.TabIndex = 3;
-
+            // 
+            txtScore.Location = new Point(160, 187);
+            txtScore.Name = "txtScore";
+            txtScore.Size = new Size(100, 23);
+            txtScore.TabIndex = 3;
+            // 
             // lblResult
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(20, 225);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.TabIndex = 4;
-            this.lblResult.Text = "Result:";
-
+            // 
+            lblResult.AutoSize = true;
+            lblResult.Location = new Point(20, 225);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(42, 15);
+            lblResult.TabIndex = 4;
+            lblResult.Text = "Result:";
+            // 
             // cmbResult
-            this.cmbResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbResult.Items.AddRange(new object[] { "Pass", "Fail" });
-            this.cmbResult.Location = new System.Drawing.Point(160, 222);
-            this.cmbResult.Name = "cmbResult";
-            this.cmbResult.Size = new System.Drawing.Size(150, 23);
-            this.cmbResult.TabIndex = 5;
-
+            // 
+            cmbResult.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbResult.Items.AddRange(new object[] { "Pass", "Fail" });
+            cmbResult.Location = new Point(160, 222);
+            cmbResult.Name = "cmbResult";
+            cmbResult.Size = new Size(150, 23);
+            cmbResult.TabIndex = 5;
+            // 
             // lblRemarks
-            this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(20, 260);
-            this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.TabIndex = 6;
-            this.lblRemarks.Text = "Remarks:";
-
+            // 
+            lblRemarks.AutoSize = true;
+            lblRemarks.Location = new Point(20, 260);
+            lblRemarks.Name = "lblRemarks";
+            lblRemarks.Size = new Size(55, 15);
+            lblRemarks.TabIndex = 6;
+            lblRemarks.Text = "Remarks:";
+            // 
             // txtRemarks
-            this.txtRemarks.Location = new System.Drawing.Point(160, 257);
-            this.txtRemarks.Multiline = true;
-            this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRemarks.Size = new System.Drawing.Size(340, 100);
-            this.txtRemarks.TabIndex = 7;
-
+            // 
+            txtRemarks.Location = new Point(160, 257);
+            txtRemarks.Multiline = true;
+            txtRemarks.Name = "txtRemarks";
+            txtRemarks.ScrollBars = ScrollBars.Vertical;
+            txtRemarks.Size = new Size(340, 100);
+            txtRemarks.TabIndex = 7;
+            // 
             // btnSave
-            this.btnSave.Location = new System.Drawing.Point(160, 375);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 27);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save Evaluation";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
-
+            // 
+            btnSave.Location = new Point(160, 375);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(150, 27);
+            btnSave.TabIndex = 8;
+            btnSave.Text = "Save Evaluation";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += BtnSave_Click;
+            // 
             // btnCancel
-            this.btnCancel.Location = new System.Drawing.Point(325, 375);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 27);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-
+            // 
+            btnCancel.Location = new Point(325, 375);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(100, 27);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            // 
             // InterviewEvaluationForm
-            this.ClientSize = new System.Drawing.Size(550, 520);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.pnlInfo);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.txtScore);
-            this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.cmbResult);
-            this.Controls.Add(this.lblRemarks);
-            this.Controls.Add(this.txtRemarks);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.Name = "InterviewEvaluationForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Interview Evaluation";
-            this.pnlInfo.ResumeLayout(false);
-            this.pnlInfo.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(550, 520);
+            Controls.Add(lblTitle);
+            Controls.Add(pnlInfo);
+            Controls.Add(lblScore);
+            Controls.Add(txtScore);
+            Controls.Add(lblResult);
+            Controls.Add(cmbResult);
+            Controls.Add(lblRemarks);
+            Controls.Add(txtRemarks);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            Name = "InterviewEvaluationForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Interview Evaluation";
+            Load += InterviewEvaluationForm_Load;
+            pnlInfo.ResumeLayout(false);
+            pnlInfo.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

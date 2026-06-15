@@ -30,8 +30,8 @@
         {
             tbclear = new Button();
             tbConRegister = new Button();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            tbConfRegPassword = new TextBox();
+            tbRegPassword = new TextBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -46,7 +46,7 @@
             // tbclear
             // 
             tbclear.BackColor = SystemColors.Info;
-            tbclear.Location = new Point(464, 427);
+            tbclear.Location = new Point(252, 434);
             tbclear.Margin = new Padding(4, 3, 4, 3);
             tbclear.Name = "tbclear";
             tbclear.Size = new Size(132, 27);
@@ -57,7 +57,7 @@
             // tbConRegister
             // 
             tbConRegister.BackColor = SystemColors.ActiveCaption;
-            tbConRegister.Location = new Point(293, 427);
+            tbConRegister.Location = new Point(49, 434);
             tbConRegister.Margin = new Padding(4, 3, 4, 3);
             tbConRegister.Name = "tbConRegister";
             tbConRegister.Size = new Size(132, 27);
@@ -66,50 +66,50 @@
             tbConRegister.UseVisualStyleBackColor = false;
             tbConRegister.Click += tbConRegister_Click;
             // 
-            // textBox5
+            // tbConfRegPassword
             // 
-            textBox5.Location = new Point(250, 369);
-            textBox5.Margin = new Padding(4, 3, 4, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(511, 23);
-            textBox5.TabIndex = 36;
+            tbConfRegPassword.Location = new Point(123, 346);
+            tbConfRegPassword.Margin = new Padding(4, 3, 4, 3);
+            tbConfRegPassword.Name = "tbConfRegPassword";
+            tbConfRegPassword.Size = new Size(290, 23);
+            tbConfRegPassword.TabIndex = 36;
             // 
-            // textBox4
+            // tbRegPassword
             // 
-            textBox4.Location = new Point(250, 321);
-            textBox4.Margin = new Padding(4, 3, 4, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(511, 23);
-            textBox4.TabIndex = 35;
+            tbRegPassword.Location = new Point(123, 298);
+            tbRegPassword.Margin = new Padding(4, 3, 4, 3);
+            tbRegPassword.Name = "tbRegPassword";
+            tbRegPassword.Size = new Size(290, 23);
+            tbRegPassword.TabIndex = 35;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(250, 276);
+            textBox3.Location = new Point(123, 253);
             textBox3.Margin = new Padding(4, 3, 4, 3);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(511, 23);
+            textBox3.Size = new Size(290, 23);
             textBox3.TabIndex = 34;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(250, 230);
+            textBox2.Location = new Point(123, 204);
             textBox2.Margin = new Padding(4, 3, 4, 3);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(511, 23);
+            textBox2.Size = new Size(290, 23);
             textBox2.TabIndex = 33;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(250, 180);
+            textBox1.Location = new Point(123, 157);
             textBox1.Margin = new Padding(4, 3, 4, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(511, 23);
+            textBox1.Size = new Size(290, 23);
             textBox1.TabIndex = 32;
             // 
             // tbConpassword
             // 
             tbConpassword.AutoSize = true;
-            tbConpassword.Location = new Point(110, 369);
+            tbConpassword.Location = new Point(14, 351);
             tbConpassword.Margin = new Padding(4, 0, 4, 0);
             tbConpassword.Name = "tbConpassword";
             tbConpassword.Size = new Size(107, 15);
@@ -119,7 +119,7 @@
             // tbpassword
             // 
             tbpassword.AutoSize = true;
-            tbpassword.Location = new Point(160, 321);
+            tbpassword.Location = new Point(61, 301);
             tbpassword.Margin = new Padding(4, 0, 4, 0);
             tbpassword.Name = "tbpassword";
             tbpassword.Size = new Size(60, 15);
@@ -129,7 +129,7 @@
             // tbemail
             // 
             tbemail.AutoSize = true;
-            tbemail.Location = new Point(178, 276);
+            tbemail.Location = new Point(82, 256);
             tbemail.Margin = new Padding(4, 0, 4, 0);
             tbemail.Name = "tbemail";
             tbemail.Size = new Size(39, 15);
@@ -139,7 +139,7 @@
             // tblname
             // 
             tblname.AutoSize = true;
-            tblname.Location = new Point(154, 230);
+            tblname.Location = new Point(55, 207);
             tblname.Margin = new Padding(4, 0, 4, 0);
             tblname.Name = "tblname";
             tblname.Size = new Size(66, 15);
@@ -149,7 +149,7 @@
             // tbfname
             // 
             tbfname.AutoSize = true;
-            tbfname.Location = new Point(155, 183);
+            tbfname.Location = new Point(54, 160);
             tbfname.Margin = new Padding(4, 0, 4, 0);
             tbfname.Name = "tbfname";
             tbfname.Size = new Size(67, 15);
@@ -159,11 +159,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 40F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(57, 66);
+            label1.Font = new Font("Microsoft Sans Serif", 23F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(15, 67);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(703, 63);
+            label1.Size = new Size(411, 35);
             label1.TabIndex = 26;
             label1.Text = "New Applicant Registration";
             // 
@@ -171,11 +171,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(439, 495);
             Controls.Add(tbclear);
             Controls.Add(tbConRegister);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(tbConfRegPassword);
+            Controls.Add(tbRegPassword);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -198,8 +198,8 @@
 
         private System.Windows.Forms.Button tbclear;
         private System.Windows.Forms.Button tbConRegister;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbConfRegPassword;
+        private System.Windows.Forms.TextBox tbRegPassword;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;

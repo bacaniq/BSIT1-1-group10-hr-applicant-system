@@ -1,7 +1,6 @@
 ﻿using ApplicantRegistrationFormFull;
 using BCrypt.Net;
 using HRApplicantSystem;
-using MyApplicationPage;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data.SqlClient;
@@ -11,11 +10,11 @@ namespace ApplicantLogInFormFull
 {
     public partial class Form1 : Form
     {
-        string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
-
+        string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;";
         public Form1()
         {
             InitializeComponent();
+            tbboxpassword.PasswordChar = '•';
         }
 
         public static class SessionManager
@@ -40,7 +39,6 @@ namespace ApplicantLogInFormFull
                 {
                     conn.Open();
 
-
                     string query = "SELECT AccountID, Password, Status FROM applicantaccounts WHERE Email = @email";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -57,7 +55,6 @@ namespace ApplicantLogInFormFull
 
                             int accountID = reader.GetInt32("AccountID");
                             string storedHash = reader.GetString("Password");
-                            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
                             bool isValid = BCrypt.Net.BCrypt.Verify(password, storedHash);
 
@@ -83,7 +80,6 @@ namespace ApplicantLogInFormFull
 
                                 this.Show();
                             }
-
                             else
                             {
                                 MessageBox.Show("Invalid email or password.");
@@ -91,14 +87,12 @@ namespace ApplicantLogInFormFull
                         }
                     }
                 }
-
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -129,6 +123,11 @@ namespace ApplicantLogInFormFull
             HRApplicantSystem.Form3 forgotpassformfull = new HRApplicantSystem.Form3();
             forgotpassformfull.ShowDialog();
             this.Show();
+        }
+
+        private void tbboxpassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
