@@ -113,11 +113,15 @@ namespace HRApplicantSystem
 
         private void dgvInterviews_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvInterviews.Rows[e.RowIndex];
+
+            if (row.Cells["ScheduleID"].Value != null)
             {
-                selectedScheduleID = Convert.ToInt32(
-                    dgvInterviews.Rows[e.RowIndex].Cells["ScheduleID"].Value
-                );
+                selectedScheduleID = Convert.ToInt32(row.Cells["ScheduleID"].Value);
+
+                MessageBox.Show("Selected ID: " + selectedScheduleID);
             }
         }
 
@@ -203,20 +207,6 @@ namespace HRApplicantSystem
 
                 cmd.ExecuteNonQuery();
             }
-
-            LoadInterviews();
-            LoadInterviewStats();
-        }
-
-        private void dgvInterviews_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (selectedScheduleID == 0)
-                return;
-
-            InterviewScheduleForm frm =
-                new InterviewScheduleForm(selectedScheduleID);
-
-            frm.ShowDialog();
 
             LoadInterviews();
             LoadInterviewStats();

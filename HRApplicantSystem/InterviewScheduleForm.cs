@@ -28,18 +28,16 @@ namespace HRApplicantSystem
                 conn.Open();
 
                 string query = @"
-            SELECT 
-                ApplicationID,
-                CONCAT(FirstName, ' ', LastName) AS ApplicantName
-            FROM applications ap
-            JOIN applicants a ON ap.AccountID = a.AccountID
-            WHERE ap.Status = 'Shortlisted'";
+        SELECT 
+            ApplicationID,
+            CONCAT(a.FirstName, ' ', a.LastName) AS ApplicantName
+        FROM applications ap
+        JOIN applicants a ON ap.AccountID = a.AccountID
+        WHERE ap.Status = 'Shortlisted'";
 
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
-                MessageBox.Show("Rows found: " + dt.Rows.Count);
 
                 cmbApplicant.DataSource = dt;
                 cmbApplicant.DisplayMember = "ApplicantName";
@@ -50,6 +48,7 @@ namespace HRApplicantSystem
         private void InterviewScheduleForm_Load(object sender, EventArgs e)
         {
             LoadApplicants();
+            LoadInterviewers();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -71,12 +70,13 @@ VALUES
 
                     cmd.Parameters.AddWithValue("@ApplicationID", cmbApplicant.SelectedValue);
 
+                    cmd.Parameters.AddWithValue("@Interviewer", cmbInterviewer.SelectedValue);
+
                     DateTime interviewDateTime =
                         dtpInterviewDate.Value.Date +
                         dtpInterviewTime.Value.TimeOfDay;
 
                     cmd.Parameters.AddWithValue("@InterviewDate", interviewDateTime);
-                    cmd.Parameters.AddWithValue("@Interviewer", txtInterviewer.Text);
                     cmd.Parameters.AddWithValue("@Mode", cmbMode.Text);
                     cmd.Parameters.AddWithValue("@Location", txtLocation.Text);
 
@@ -106,7 +106,7 @@ VALUES
                         dtpInterviewTime.Value.TimeOfDay;
 
                     cmd.Parameters.AddWithValue("@InterviewDate", interviewDateTime);
-                    cmd.Parameters.AddWithValue("@Interviewer", txtInterviewer.Text);
+                    cmd.Parameters.AddWithValue("@Interviewer", cmbInterviewer.Text);
                     cmd.Parameters.AddWithValue("@Mode", cmbMode.Text);
                     cmd.Parameters.AddWithValue("@Location", txtLocation.Text);
 
@@ -130,6 +130,28 @@ VALUES
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LoadInterviewers()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+        SELECT 
+            InterviewerID,
+            FullName
+        FROM interviewers";
+
+                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmbInterviewer.DataSource = dt;
+                cmbInterviewer.DisplayMember = "FullName";
+                cmbInterviewer.ValueMember = "InterviewerID";
+            }
         }
     }
 }
