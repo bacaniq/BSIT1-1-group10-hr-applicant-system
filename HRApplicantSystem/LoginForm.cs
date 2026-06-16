@@ -41,7 +41,29 @@ namespace HRApplicantSystem
 
                 if (hrReader.Read())
                 {
-                    MessageBox.Show("Welcome HR!");
+                    Session.UserID = Convert.ToInt32(hrReader["UserID"]);
+                    Session.FullName = hrReader["FullName"].ToString();
+
+                    int roleID = Convert.ToInt32(hrReader["RoleID"]);
+
+                    if (roleID == 1)
+                        Session.Role = "Admin";
+                    else if (roleID == 2)
+                        Session.Role = "HR Manager";
+                    else
+                        Session.Role = "HR Staff";
+
+                    Session.IsHRManager =
+                        roleID == 1 ||
+                        roleID == 2;
+
+                    MessageBox.Show(
+                    $"Welcome {Session.FullName}!\n\nYou are logged in as: {Session.Role}",
+                    "HR Applicant System",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+
                     hrReader.Close();
 
                     DashboardForm dash = new DashboardForm();

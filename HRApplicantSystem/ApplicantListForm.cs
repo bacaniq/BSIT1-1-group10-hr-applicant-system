@@ -20,75 +20,8 @@ namespace HRApplicantSystem
 
         public ApplicantListForm()
         {
-            InitializeControls();
+            InitializeComponent();
             LoadApplicants();
-        }
-
-        private void InitializeControls()
-        {
-            this.Text = "Applicant List";
-            this.Size = new System.Drawing.Size(900, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            lblTitle = new Label()
-            {
-                Text = "Applicant List",
-                Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold),
-                Location = new System.Drawing.Point(20, 15),
-                AutoSize = true
-            };
-
-            lblSearch = new Label() { Text = "Search Name/Email:", Location = new System.Drawing.Point(20, 60), AutoSize = true };
-            txtSearch = new TextBox() { Location = new System.Drawing.Point(150, 57), Width = 200 };
-
-            lblStatus = new Label() { Text = "Filter by Status:", Location = new System.Drawing.Point(370, 60), AutoSize = true };
-            cmbStatusFilter = new ComboBox()
-            {
-                Location = new System.Drawing.Point(470, 57),
-                Width = 160,
-                DropDownStyle = ComboBoxStyle.DropDownList
-            };
-            cmbStatusFilter.Items.AddRange(new string[]
-            {
-                "All", "Draft", "Submitted", "Under Review",
-                "Shortlisted", "For Interview", "For Assessment",
-                "For Final Review", "Accepted", "Rejected", "Withdrawn"
-            });
-            cmbStatusFilter.SelectedIndex = 0;
-
-            btnSearch = new Button()
-            {
-                Text = "Search",
-                Location = new System.Drawing.Point(645, 55),
-                Width = 80
-            };
-            btnSearch.Click += BtnSearch_Click;
-
-            dgvApplicants = new DataGridView()
-            {
-                Location = new System.Drawing.Point(20, 95),
-                Size = new System.Drawing.Size(840, 400),
-                ReadOnly = true,
-                SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-                MultiSelect = false,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                AllowUserToAddRows = false
-            };
-
-            btnReview = new Button()
-            {
-                Text = "Open Review",
-                Location = new System.Drawing.Point(730, 510),
-                Width = 130
-            };
-            btnReview.Click += BtnReview_Click;
-
-            this.Controls.AddRange(new Control[]
-            {
-                lblTitle, lblSearch, txtSearch,
-                lblStatus, cmbStatusFilter,
-                btnSearch, dgvApplicants, btnReview
-            });
         }
 
 
@@ -96,53 +29,51 @@ namespace HRApplicantSystem
         {
             try
             {
-                using (var conn = new MySql.Data.MySqlClient.MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;"))
+                using (MySqlConnection conn = DBConnection.GetConnection())
                 {
                     conn.Open();
 
                     string query = @"
-                        SELECT 
-                            app.ApplicationID,
-                            CONCAT(a.FirstName, ' ', a.LastName) AS FullName,
-                            acc.Email,
-                            j.JobTitle,
-                            app.Status,
-                            app.AppliedDate
-                        FROM Applications app
-                        JOIN ApplicantAccounts acc ON app.AccountID = acc.AccountID
-                        JOIN Applicants a ON acc.AccountID = a.AccountID
-                        JOIN JobVacancies j ON app.JobID = j.JobID
-                        WHERE 1=1";
+                SELECT
+                    app.ApplicationID,
+                    CONCAT(a.FirstName, ' ', a.LastName) AS FullName,
+                    acc.Email,
+                    j.JobTitle,
+                    app.Status,
+                    app.AppliedDate
+                FROM Applications app
+                INNER JOIN ApplicantAccounts acc ON app.AccountID = acc.AccountID
+                INNER JOIN Applicants a ON acc.AccountID = a.AccountID
+                INNER JOIN JobVacancies j ON app.JobID = j.JobID
+                WHERE
+                (
+                    @search = '' OR
+                    CONCAT(a.FirstName, ' ', a.LastName) LIKE CONCAT('%', @search, '%')
+                    OR acc.Email LIKE CONCAT('%', @search, '%')
+                )
+                AND
+                (
+                    @status = 'All'
+                    OR app.Status = @status
+                )
+                ORDER BY app.ApplicationID DESC";
 
-                    if (!string.IsNullOrWhiteSpace(search))
-                        query += " AND (CONCAT(a.FirstName,' ',a.LastName) LIKE @search OR acc.Email LIKE @search)";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@search", search);
+                    cmd.Parameters.AddWithValue("@status", statusFilter);
 
-                    if (statusFilter != "All")
-                        query += " AND app.Status = @status";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
 
-                    query += " ORDER BY app.AppliedDate DESC";
-
-                    var cmd = new MySqlCommand(query, conn);
-
-                    if (!string.IsNullOrWhiteSpace(search))
-                        cmd.Parameters.AddWithValue("@search", "%" + search + "%");
-
-                    if (statusFilter != "All")
-                        cmd.Parameters.AddWithValue("@status", statusFilter);
-
-                    var adapter = new MySqlDataAdapter(cmd);
-                    var table = new DataTable();
-                    adapter.Fill(table);
-                    dgvApplicants.DataSource = table;
-
-                    // Hide the raw ID column from the user
-                    if (dgvApplicants.Columns.Contains("ApplicationID"))
-                        dgvApplicants.Columns["ApplicationID"].Visible = false;
+                    dgvApplicants.AutoGenerateColumns = true;
+                    dgvApplicants.DataSource = dt;
+                    dgvApplicants.Refresh();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading applicants: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -163,8 +94,9 @@ namespace HRApplicantSystem
             int applicationID = Convert.ToInt32(dgvApplicants.SelectedRows[0].Cells["ApplicationID"].Value);
 
             var reviewForm = new ApplicantReviewForm(applicationID);
-            reviewForm.FormClosed += (s, args) => LoadApplicants(); // Refresh list after review
-            reviewForm.Show();
+            reviewForm.ShowDialog();
+
+            LoadApplicants();
         }
     }
 
@@ -193,7 +125,9 @@ namespace HRApplicantSystem
         private DataGridView dgvDocuments;
         private Button btnLockReview;
         private Button btnClose;
+        private Button btnFinalDecision;
         private Panel pnlInfo;
+
 
         public ApplicantReviewForm(int applicationID)
         {
@@ -201,6 +135,7 @@ namespace HRApplicantSystem
             InitializeControls();
             LoadApplicantDetails();
             LoadDocuments();
+
         }
 
         private void InitializeControls()
@@ -257,6 +192,17 @@ namespace HRApplicantSystem
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect
             };
 
+            btnFinalDecision = new Button()
+            {
+                Text = "Final Hiring Decision",
+                Location = new System.Drawing.Point(430, 540),
+                Width = 170
+            };
+
+            btnFinalDecision.Click += BtnFinalDecision_Click;
+
+            this.Controls.Add(btnFinalDecision);
+
             btnLockReview = new Button()
             {
                 Text = "Start Review (Lock Application)",
@@ -278,6 +224,8 @@ namespace HRApplicantSystem
                 pnlInfo, lblDocuments, dgvDocuments,
                 btnLockReview, btnClose
             });
+
+
         }
 
         private Label MakeLabel(string text, int x, int y)
@@ -333,9 +281,9 @@ namespace HRApplicantSystem
                             valStatus.Text = reader["Status"].ToString();
                             valAppliedDate.Text = Convert.ToDateTime(reader["AppliedDate"]).ToString("MMM dd, yyyy");
 
-                            // If already under review or further, disable the lock button
+
                             string status = reader["Status"].ToString();
-                            if (status != "Draft" && status != "Submitted")
+                            if (status == "Rejected" || status == "Hired")
                                 btnLockReview.Enabled = false;
                         }
                     }
@@ -431,6 +379,13 @@ namespace HRApplicantSystem
             {
                 MessageBox.Show("Error locking application: " + ex.Message);
             }
+
+
+        }
+        private void BtnFinalDecision_Click(object sender, EventArgs e)
+        {
+            HiringDecisionForm frm = new HiringDecisionForm(_applicationID);
+            frm.ShowDialog();
         }
     }
 }

@@ -19,6 +19,11 @@ namespace HRApplicantSystem
         public HiringDecisionForm(int applicationID)
         {
             _applicationID = applicationID;
+
+            MessageBox.Show(
+                "Role: " + Session.Role +
+                "\nIsHRManager: " + Session.IsHRManager);
+
             InitializeControls();
             CheckRoleAccess();
             LoadApplicantInfo();
@@ -81,7 +86,7 @@ namespace HRApplicantSystem
                 Width = 180,
                 DropDownStyle = ComboBoxStyle.DropDownList
             };
-            cmbDecision.Items.AddRange(new string[] { "Accepted", "Rejected", "On Hold" });
+            cmbDecision.Items.AddRange(new string[] { "Hired", "Rejected" });
             cmbDecision.SelectedIndex = 0;
 
             lblRemarks = new Label() { Text = "Remarks:", Location = new System.Drawing.Point(20, 248), AutoSize = true };
@@ -116,6 +121,8 @@ namespace HRApplicantSystem
                 btnConfirm, btnCancel
             });
         }
+
+
 
         private Label MakeLabel(string text, int x, int y)
         {
@@ -162,9 +169,9 @@ namespace HRApplicantSystem
                             valJobTitle.Text = reader["JobTitle"].ToString();
                             valCurrentStatus.Text = reader["Status"].ToString();
 
-                            if (reader["Status"].ToString() != "For Final Review")
+                            if (reader["Status"].ToString() != "Shortlisted")
                             {
-                                MessageBox.Show("This application is not yet at the Final Review stage.");
+                                MessageBox.Show("Only shortlisted applicants can proceed to final hiring decision.");
                                 btnConfirm.Enabled = false;
                             }
                         }
@@ -196,7 +203,7 @@ namespace HRApplicantSystem
 
             if (confirm != DialogResult.Yes) return;
 
-            string newStatus = decision == "On Hold" ? "For Final Review" : decision;
+            string newStatus = decision;
 
             try
             {
@@ -243,6 +250,11 @@ namespace HRApplicantSystem
             {
                 MessageBox.Show("Error saving decision: " + ex.Message);
             }
+        }
+
+        private void InitializeComponent()
+        {
+
         }
     }
 }
