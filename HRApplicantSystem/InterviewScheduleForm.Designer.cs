@@ -35,13 +35,13 @@
             dtpInterviewDate = new DateTimePicker();
             dtpInterviewTime = new DateTimePicker();
             label4 = new Label();
-            txtInterviewer = new TextBox();
             label5 = new Label();
             cmbMode = new ComboBox();
             label6 = new Label();
             txtLocation = new TextBox();
             btnSave = new Button();
             btnCancel = new Button();
+            cmbInterviewer = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -117,13 +117,6 @@
             label4.TabIndex = 6;
             label4.Text = "Interviewer:";
             // 
-            // txtInterviewer
-            // 
-            txtInterviewer.Location = new Point(183, 137);
-            txtInterviewer.Name = "txtInterviewer";
-            txtInterviewer.Size = new Size(199, 22);
-            txtInterviewer.TabIndex = 7;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -182,18 +175,26 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // cmbInterviewer
+            // 
+            cmbInterviewer.FormattingEnabled = true;
+            cmbInterviewer.Location = new Point(183, 137);
+            cmbInterviewer.Name = "cmbInterviewer";
+            cmbInterviewer.Size = new Size(121, 21);
+            cmbInterviewer.TabIndex = 14;
+            // 
             // InterviewScheduleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 361);
+            Controls.Add(cmbInterviewer);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(txtLocation);
             Controls.Add(label6);
             Controls.Add(cmbMode);
             Controls.Add(label5);
-            Controls.Add(txtInterviewer);
             Controls.Add(label4);
             Controls.Add(dtpInterviewTime);
             Controls.Add(dtpInterviewDate);
@@ -207,7 +208,7 @@
             Name = "InterviewScheduleForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "InterviewScheduleForm";
-            Load += InterviewScheduleForm_Load_1;
+            Load += InterviewScheduleForm_Load;
             ResumeLayout(false);
             PerformLayout();
 
@@ -222,12 +223,12 @@
         private System.Windows.Forms.DateTimePicker dtpInterviewDate;
         private System.Windows.Forms.DateTimePicker dtpInterviewTime;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtInterviewer;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbMode;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private ComboBox cmbInterviewer;
     }
 }

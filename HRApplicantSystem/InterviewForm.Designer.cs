@@ -28,311 +28,335 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvInterviews = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnInterview = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnPassed = new System.Windows.Forms.Button();
-            this.btnFailed = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.lblTotalInterviews = new System.Windows.Forms.Label();
-            this.pnlTotal = new System.Windows.Forms.Panel();
-            this.lblTotalTitle = new System.Windows.Forms.Label();
-            this.pnlSchedule = new System.Windows.Forms.Panel();
-            this.lblScheduledTitle = new System.Windows.Forms.Label();
-            this.lblScheduled = new System.Windows.Forms.Label();
-            this.pnlPassed = new System.Windows.Forms.Panel();
-            this.lblPassedTitle = new System.Windows.Forms.Label();
-            this.lblPassed = new System.Windows.Forms.Label();
-            this.pnlFailed = new System.Windows.Forms.Panel();
-            this.lblFailedTitle = new System.Windows.Forms.Label();
-            this.lblFailed = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInterviews)).BeginInit();
-            this.pnlTotal.SuspendLayout();
-            this.pnlSchedule.SuspendLayout();
-            this.pnlPassed.SuspendLayout();
-            this.pnlFailed.SuspendLayout();
-            this.SuspendLayout();
+            dgvInterviews = new DataGridView();
+            btnSearch = new Button();
+            btnInterview = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnPassed = new Button();
+            btnFailed = new Button();
+            btnBack = new Button();
+            lblTotalInterviews = new Label();
+            pnlTotal = new Panel();
+            lblTotalTitle = new Label();
+            pnlSchedule = new Panel();
+            lblScheduledTitle = new Label();
+            lblScheduled = new Label();
+            pnlPassed = new Panel();
+            lblPassedTitle = new Label();
+            lblPassed = new Label();
+            pnlFailed = new Panel();
+            lblFailedTitle = new Label();
+            lblFailed = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            txtSearch = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvInterviews).BeginInit();
+            pnlTotal.SuspendLayout();
+            pnlSchedule.SuspendLayout();
+            pnlPassed.SuspendLayout();
+            pnlFailed.SuspendLayout();
+            SuspendLayout();
             // 
             // dgvInterviews
             // 
-            this.dgvInterviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInterviews.Location = new System.Drawing.Point(12, 233);
-            this.dgvInterviews.Name = "dgvInterviews";
-            this.dgvInterviews.Size = new System.Drawing.Size(776, 216);
-            this.dgvInterviews.TabIndex = 4;
-            this.dgvInterviews.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInterviews_CellContentClick);
+            dgvInterviews.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInterviews.Location = new Point(14, 269);
+            dgvInterviews.Margin = new Padding(4, 3, 4, 3);
+            dgvInterviews.Name = "dgvInterviews";
+            dgvInterviews.Size = new Size(905, 249);
+            dgvInterviews.TabIndex = 4;
+            dgvInterviews.CellClick += dgvInterviews_CellClick;
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(261, 192);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 20);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            btnSearch.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.Location = new Point(304, 222);
+            btnSearch.Margin = new Padding(4, 3, 4, 3);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(88, 23);
+            btnSearch.TabIndex = 7;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btnInterview
             // 
-            this.btnInterview.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInterview.Location = new System.Drawing.Point(42, 464);
-            this.btnInterview.Name = "btnInterview";
-            this.btnInterview.Size = new System.Drawing.Size(126, 23);
-            this.btnInterview.TabIndex = 8;
-            this.btnInterview.Text = "Schedule Interview";
-            this.btnInterview.UseVisualStyleBackColor = true;
-            this.btnInterview.Click += new System.EventHandler(this.btnInterview_Click);
+            btnInterview.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInterview.Location = new Point(49, 535);
+            btnInterview.Margin = new Padding(4, 3, 4, 3);
+            btnInterview.Name = "btnInterview";
+            btnInterview.Size = new Size(147, 27);
+            btnInterview.TabIndex = 8;
+            btnInterview.Text = "Schedule Interview";
+            btnInterview.UseVisualStyleBackColor = true;
+            btnInterview.Click += btnInterview_Click;
             // 
             // btnEdit
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(432, 464);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.Location = new Point(504, 535);
+            btnEdit.Margin = new Padding(4, 3, 4, 3);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(88, 27);
+            btnEdit.TabIndex = 9;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(529, 464);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(617, 535);
+            btnDelete.Margin = new Padding(4, 3, 4, 3);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(88, 27);
+            btnDelete.TabIndex = 10;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnPassed
             // 
-            this.btnPassed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPassed.Location = new System.Drawing.Point(194, 464);
-            this.btnPassed.Name = "btnPassed";
-            this.btnPassed.Size = new System.Drawing.Size(97, 23);
-            this.btnPassed.TabIndex = 11;
-            this.btnPassed.Text = "Mark Passed";
-            this.btnPassed.UseVisualStyleBackColor = true;
-            this.btnPassed.Click += new System.EventHandler(this.btnPassed_Click);
+            btnPassed.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPassed.Location = new Point(226, 535);
+            btnPassed.Margin = new Padding(4, 3, 4, 3);
+            btnPassed.Name = "btnPassed";
+            btnPassed.Size = new Size(113, 27);
+            btnPassed.TabIndex = 11;
+            btnPassed.Text = "Mark Passed";
+            btnPassed.UseVisualStyleBackColor = true;
+            btnPassed.Click += btnPassed_Click;
             // 
             // btnFailed
             // 
-            this.btnFailed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFailed.Location = new System.Drawing.Point(317, 464);
-            this.btnFailed.Name = "btnFailed";
-            this.btnFailed.Size = new System.Drawing.Size(97, 23);
-            this.btnFailed.TabIndex = 12;
-            this.btnFailed.Text = "Mark Failed";
-            this.btnFailed.UseVisualStyleBackColor = true;
-            this.btnFailed.Click += new System.EventHandler(this.btnFailed_Click);
+            btnFailed.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFailed.Location = new Point(370, 535);
+            btnFailed.Margin = new Padding(4, 3, 4, 3);
+            btnFailed.Name = "btnFailed";
+            btnFailed.Size = new Size(113, 27);
+            btnFailed.TabIndex = 12;
+            btnFailed.Text = "Mark Failed";
+            btnFailed.UseVisualStyleBackColor = true;
+            btnFailed.Click += btnFailed_Click;
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(630, 464);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(97, 23);
-            this.btnBack.TabIndex = 13;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(735, 535);
+            btnBack.Margin = new Padding(4, 3, 4, 3);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(113, 27);
+            btnBack.TabIndex = 13;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // lblTotalInterviews
             // 
-            this.lblTotalInterviews.AutoSize = true;
-            this.lblTotalInterviews.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalInterviews.ForeColor = System.Drawing.Color.White;
-            this.lblTotalInterviews.Location = new System.Drawing.Point(85, 44);
-            this.lblTotalInterviews.Name = "lblTotalInterviews";
-            this.lblTotalInterviews.Size = new System.Drawing.Size(38, 45);
-            this.lblTotalInterviews.TabIndex = 14;
-            this.lblTotalInterviews.Text = "0";
+            lblTotalInterviews.AutoSize = true;
+            lblTotalInterviews.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalInterviews.ForeColor = Color.White;
+            lblTotalInterviews.Location = new Point(99, 51);
+            lblTotalInterviews.Margin = new Padding(4, 0, 4, 0);
+            lblTotalInterviews.Name = "lblTotalInterviews";
+            lblTotalInterviews.Size = new Size(38, 45);
+            lblTotalInterviews.TabIndex = 14;
+            lblTotalInterviews.Text = "0";
             // 
             // pnlTotal
             // 
-            this.pnlTotal.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlTotal.Controls.Add(this.lblTotalTitle);
-            this.pnlTotal.Controls.Add(this.lblTotalInterviews);
-            this.pnlTotal.Location = new System.Drawing.Point(12, 72);
-            this.pnlTotal.Name = "pnlTotal";
-            this.pnlTotal.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlTotal.Size = new System.Drawing.Size(180, 100);
-            this.pnlTotal.TabIndex = 14;
+            pnlTotal.BackColor = Color.SteelBlue;
+            pnlTotal.Controls.Add(lblTotalTitle);
+            pnlTotal.Controls.Add(lblTotalInterviews);
+            pnlTotal.Location = new Point(14, 83);
+            pnlTotal.Margin = new Padding(4, 3, 4, 3);
+            pnlTotal.Name = "pnlTotal";
+            pnlTotal.Padding = new Padding(12, 12, 12, 12);
+            pnlTotal.Size = new Size(210, 115);
+            pnlTotal.TabIndex = 14;
             // 
             // lblTotalTitle
             // 
-            this.lblTotalTitle.AutoSize = true;
-            this.lblTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTitle.Location = new System.Drawing.Point(44, 25);
-            this.lblTotalTitle.Name = "lblTotalTitle";
-            this.lblTotalTitle.Size = new System.Drawing.Size(130, 17);
-            this.lblTotalTitle.TabIndex = 16;
-            this.lblTotalTitle.Text = "📋 Total Interviews";
+            lblTotalTitle.AutoSize = true;
+            lblTotalTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalTitle.Location = new Point(51, 29);
+            lblTotalTitle.Margin = new Padding(4, 0, 4, 0);
+            lblTotalTitle.Name = "lblTotalTitle";
+            lblTotalTitle.Size = new Size(127, 17);
+            lblTotalTitle.TabIndex = 16;
+            lblTotalTitle.Text = "📋 Total Interviews";
             // 
             // pnlSchedule
             // 
-            this.pnlSchedule.BackColor = System.Drawing.Color.Goldenrod;
-            this.pnlSchedule.Controls.Add(this.lblScheduledTitle);
-            this.pnlSchedule.Controls.Add(this.lblScheduled);
-            this.pnlSchedule.Location = new System.Drawing.Point(210, 72);
-            this.pnlSchedule.Name = "pnlSchedule";
-            this.pnlSchedule.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlSchedule.Size = new System.Drawing.Size(180, 100);
-            this.pnlSchedule.TabIndex = 15;
+            pnlSchedule.BackColor = Color.Goldenrod;
+            pnlSchedule.Controls.Add(lblScheduledTitle);
+            pnlSchedule.Controls.Add(lblScheduled);
+            pnlSchedule.Location = new Point(245, 83);
+            pnlSchedule.Margin = new Padding(4, 3, 4, 3);
+            pnlSchedule.Name = "pnlSchedule";
+            pnlSchedule.Padding = new Padding(12, 12, 12, 12);
+            pnlSchedule.Size = new Size(210, 115);
+            pnlSchedule.TabIndex = 15;
             // 
             // lblScheduledTitle
             // 
-            this.lblScheduledTitle.AutoSize = true;
-            this.lblScheduledTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScheduledTitle.Location = new System.Drawing.Point(72, 25);
-            this.lblScheduledTitle.Name = "lblScheduledTitle";
-            this.lblScheduledTitle.Size = new System.Drawing.Size(94, 17);
-            this.lblScheduledTitle.TabIndex = 17;
-            this.lblScheduledTitle.Text = "🕒 Scheduled";
+            lblScheduledTitle.AutoSize = true;
+            lblScheduledTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblScheduledTitle.Location = new Point(84, 29);
+            lblScheduledTitle.Margin = new Padding(4, 0, 4, 0);
+            lblScheduledTitle.Name = "lblScheduledTitle";
+            lblScheduledTitle.Size = new Size(94, 17);
+            lblScheduledTitle.TabIndex = 17;
+            lblScheduledTitle.Text = "🕒 Scheduled";
             // 
             // lblScheduled
             // 
-            this.lblScheduled.AutoSize = true;
-            this.lblScheduled.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScheduled.ForeColor = System.Drawing.Color.White;
-            this.lblScheduled.Location = new System.Drawing.Point(88, 44);
-            this.lblScheduled.Name = "lblScheduled";
-            this.lblScheduled.Size = new System.Drawing.Size(38, 45);
-            this.lblScheduled.TabIndex = 15;
-            this.lblScheduled.Text = "0";
+            lblScheduled.AutoSize = true;
+            lblScheduled.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblScheduled.ForeColor = Color.White;
+            lblScheduled.Location = new Point(103, 51);
+            lblScheduled.Margin = new Padding(4, 0, 4, 0);
+            lblScheduled.Name = "lblScheduled";
+            lblScheduled.Size = new Size(38, 45);
+            lblScheduled.TabIndex = 15;
+            lblScheduled.Text = "0";
             // 
             // pnlPassed
             // 
-            this.pnlPassed.BackColor = System.Drawing.Color.ForestGreen;
-            this.pnlPassed.Controls.Add(this.lblPassedTitle);
-            this.pnlPassed.Controls.Add(this.lblPassed);
-            this.pnlPassed.Location = new System.Drawing.Point(405, 72);
-            this.pnlPassed.Name = "pnlPassed";
-            this.pnlPassed.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlPassed.Size = new System.Drawing.Size(180, 100);
-            this.pnlPassed.TabIndex = 16;
+            pnlPassed.BackColor = Color.ForestGreen;
+            pnlPassed.Controls.Add(lblPassedTitle);
+            pnlPassed.Controls.Add(lblPassed);
+            pnlPassed.Location = new Point(472, 83);
+            pnlPassed.Margin = new Padding(4, 3, 4, 3);
+            pnlPassed.Name = "pnlPassed";
+            pnlPassed.Padding = new Padding(12, 12, 12, 12);
+            pnlPassed.Size = new Size(210, 115);
+            pnlPassed.TabIndex = 16;
             // 
             // lblPassedTitle
             // 
-            this.lblPassedTitle.AutoSize = true;
-            this.lblPassedTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassedTitle.Location = new System.Drawing.Point(78, 25);
-            this.lblPassedTitle.Name = "lblPassedTitle";
-            this.lblPassedTitle.Size = new System.Drawing.Size(73, 17);
-            this.lblPassedTitle.TabIndex = 18;
-            this.lblPassedTitle.Text = "✅ Passed";
+            lblPassedTitle.AutoSize = true;
+            lblPassedTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPassedTitle.Location = new Point(91, 29);
+            lblPassedTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPassedTitle.Name = "lblPassedTitle";
+            lblPassedTitle.Size = new Size(73, 17);
+            lblPassedTitle.TabIndex = 18;
+            lblPassedTitle.Text = "✅ Passed";
             // 
             // lblPassed
             // 
-            this.lblPassed.AutoSize = true;
-            this.lblPassed.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassed.ForeColor = System.Drawing.Color.White;
-            this.lblPassed.Location = new System.Drawing.Point(87, 44);
-            this.lblPassed.Name = "lblPassed";
-            this.lblPassed.Size = new System.Drawing.Size(38, 45);
-            this.lblPassed.TabIndex = 16;
-            this.lblPassed.Text = "0";
+            lblPassed.AutoSize = true;
+            lblPassed.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPassed.ForeColor = Color.White;
+            lblPassed.Location = new Point(102, 51);
+            lblPassed.Margin = new Padding(4, 0, 4, 0);
+            lblPassed.Name = "lblPassed";
+            lblPassed.Size = new Size(38, 45);
+            lblPassed.TabIndex = 16;
+            lblPassed.Text = "0";
             // 
             // pnlFailed
             // 
-            this.pnlFailed.BackColor = System.Drawing.Color.IndianRed;
-            this.pnlFailed.Controls.Add(this.lblFailedTitle);
-            this.pnlFailed.Controls.Add(this.lblFailed);
-            this.pnlFailed.Location = new System.Drawing.Point(608, 72);
-            this.pnlFailed.Name = "pnlFailed";
-            this.pnlFailed.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlFailed.Size = new System.Drawing.Size(180, 100);
-            this.pnlFailed.TabIndex = 17;
+            pnlFailed.BackColor = Color.IndianRed;
+            pnlFailed.Controls.Add(lblFailedTitle);
+            pnlFailed.Controls.Add(lblFailed);
+            pnlFailed.Location = new Point(709, 83);
+            pnlFailed.Margin = new Padding(4, 3, 4, 3);
+            pnlFailed.Name = "pnlFailed";
+            pnlFailed.Padding = new Padding(12, 12, 12, 12);
+            pnlFailed.Size = new Size(210, 115);
+            pnlFailed.TabIndex = 17;
             // 
             // lblFailedTitle
             // 
-            this.lblFailedTitle.AutoSize = true;
-            this.lblFailedTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFailedTitle.Location = new System.Drawing.Point(77, 25);
-            this.lblFailedTitle.Name = "lblFailedTitle";
-            this.lblFailedTitle.Size = new System.Drawing.Size(68, 17);
-            this.lblFailedTitle.TabIndex = 19;
-            this.lblFailedTitle.Text = "❌ Failed";
+            lblFailedTitle.AutoSize = true;
+            lblFailedTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFailedTitle.Location = new Point(90, 29);
+            lblFailedTitle.Margin = new Padding(4, 0, 4, 0);
+            lblFailedTitle.Name = "lblFailedTitle";
+            lblFailedTitle.Size = new Size(68, 17);
+            lblFailedTitle.TabIndex = 19;
+            lblFailedTitle.Text = "❌ Failed";
             // 
             // lblFailed
             // 
-            this.lblFailed.AutoSize = true;
-            this.lblFailed.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFailed.ForeColor = System.Drawing.Color.White;
-            this.lblFailed.Location = new System.Drawing.Point(81, 44);
-            this.lblFailed.Name = "lblFailed";
-            this.lblFailed.Size = new System.Drawing.Size(38, 45);
-            this.lblFailed.TabIndex = 17;
-            this.lblFailed.Text = "0";
+            lblFailed.AutoSize = true;
+            lblFailed.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFailed.ForeColor = Color.White;
+            lblFailed.Location = new Point(94, 51);
+            lblFailed.Margin = new Padding(4, 0, 4, 0);
+            lblFailed.Name = "lblFailed";
+            lblFailed.Size = new Size(38, 45);
+            lblFailed.TabIndex = 17;
+            lblFailed.Text = "0";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 30);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Interview Management";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 23);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(242, 30);
+            label1.TabIndex = 18;
+            label1.Text = "Interview Management";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Search Applicant:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(28, 225);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(97, 13);
+            label2.TabIndex = 19;
+            label2.Text = "Search Applicant:";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(127, 192);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(127, 20);
-            this.txtSearch.TabIndex = 20;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            txtSearch.Location = new Point(148, 222);
+            txtSearch.Margin = new Padding(4, 3, 4, 3);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(148, 23);
+            txtSearch.TabIndex = 20;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // InterviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 504);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnlFailed);
-            this.Controls.Add(this.pnlPassed);
-            this.Controls.Add(this.pnlSchedule);
-            this.Controls.Add(this.pnlTotal);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnFailed);
-            this.Controls.Add(this.btnPassed);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnInterview);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dgvInterviews);
-            this.Name = "InterviewForm";
-            this.Text = "Interview Management";
-            this.Load += new System.EventHandler(this.InterviewForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInterviews)).EndInit();
-            this.pnlTotal.ResumeLayout(false);
-            this.pnlTotal.PerformLayout();
-            this.pnlSchedule.ResumeLayout(false);
-            this.pnlSchedule.PerformLayout();
-            this.pnlPassed.ResumeLayout(false);
-            this.pnlPassed.PerformLayout();
-            this.pnlFailed.ResumeLayout(false);
-            this.pnlFailed.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(933, 582);
+            Controls.Add(txtSearch);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pnlFailed);
+            Controls.Add(pnlPassed);
+            Controls.Add(pnlSchedule);
+            Controls.Add(pnlTotal);
+            Controls.Add(btnBack);
+            Controls.Add(btnFailed);
+            Controls.Add(btnPassed);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
+            Controls.Add(btnInterview);
+            Controls.Add(btnSearch);
+            Controls.Add(dgvInterviews);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "InterviewForm";
+            Text = "Interview Management";
+            Load += InterviewForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvInterviews).EndInit();
+            pnlTotal.ResumeLayout(false);
+            pnlTotal.PerformLayout();
+            pnlSchedule.ResumeLayout(false);
+            pnlSchedule.PerformLayout();
+            pnlPassed.ResumeLayout(false);
+            pnlPassed.PerformLayout();
+            pnlFailed.ResumeLayout(false);
+            pnlFailed.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

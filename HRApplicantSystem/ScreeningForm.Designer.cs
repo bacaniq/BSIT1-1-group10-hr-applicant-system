@@ -42,18 +42,20 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(340, 66);
             label1.Name = "label1";
-            label1.Size = new Size(59, 15);
+            label1.Size = new Size(86, 21);
             label1.TabIndex = 0;
             label1.Text = "Screening";
             // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { ApplicantName, JobTitle, Status });
-            listView1.Location = new Point(235, 106);
+            listView1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listView1.Location = new Point(151, 99);
             listView1.Name = "listView1";
-            listView1.Size = new Size(288, 160);
+            listView1.Size = new Size(485, 160);
             listView1.TabIndex = 1;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -73,22 +75,24 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(203, 284);
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(279, 268);
             label2.Name = "label2";
-            label2.Size = new Size(55, 15);
+            label2.Size = new Size(59, 15);
             label2.TabIndex = 2;
             label2.Text = "Remarks:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(264, 276);
+            textBox1.Location = new Point(340, 265);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(142, 23);
             textBox1.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(245, 326);
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(243, 307);
             button1.Name = "button1";
             button1.Size = new Size(100, 34);
             button1.TabIndex = 4;
@@ -98,7 +102,8 @@
             // 
             // button2
             // 
-            button2.Location = new Point(416, 330);
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(416, 311);
             button2.Name = "button2";
             button2.Size = new Size(107, 30);
             button2.TabIndex = 5;

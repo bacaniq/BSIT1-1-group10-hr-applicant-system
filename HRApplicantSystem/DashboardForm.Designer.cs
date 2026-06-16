@@ -32,7 +32,6 @@
             btnScreenings = new Button();
             btnInterviews = new Button();
             btnLogout = new Button();
-            btnTestConnection = new Button();
             lblTotalApplicants = new Label();
             lblPendingScreenings = new Label();
             lblInterviews = new Label();
@@ -46,7 +45,6 @@
             label2 = new Label();
             panel3 = new Panel();
             label3 = new Label();
-            btnApplicantList = new Button();
             pnlTotal.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -95,17 +93,6 @@
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
-            // 
-            // btnTestConnection
-            // 
-            btnTestConnection.Location = new Point(81, 225);
-            btnTestConnection.Name = "btnTestConnection";
-            btnTestConnection.Size = new Size(111, 23);
-            btnTestConnection.TabIndex = 8;
-            btnTestConnection.Text = "Test Connection";
-            btnTestConnection.TextAlign = ContentAlignment.BottomCenter;
-            btnTestConnection.UseVisualStyleBackColor = true;
-            btnTestConnection.Click += btnTestConnection_Click;
             // 
             // lblTotalApplicants
             // 
@@ -243,28 +230,15 @@
             label3.TabIndex = 16;
             label3.Text = "Hired Applicants";
             // 
-            // btnApplicantList
-            // 
-            btnApplicantList.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnApplicantList.Location = new Point(60, 177);
-            btnApplicantList.Name = "btnApplicantList";
-            btnApplicantList.Size = new Size(76, 27);
-            btnApplicantList.TabIndex = 20;
-            btnApplicantList.Text = "Applicant List";
-            btnApplicantList.UseVisualStyleBackColor = true;
-            btnApplicantList.Click += button1_Click;
-            // 
             // DashboardForm
             // 
             BackColor = Color.White;
             ClientSize = new Size(814, 261);
-            Controls.Add(btnApplicantList);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pnlTotal);
             Controls.Add(lblTotalApplicants);
-            Controls.Add(btnTestConnection);
             Controls.Add(btnLogout);
             Controls.Add(btnInterviews);
             Controls.Add(btnScreenings);
@@ -294,7 +268,6 @@
         private System.Windows.Forms.Button btnScreenings;
         private System.Windows.Forms.Button btnInterviews;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnTestConnection;
         private System.Windows.Forms.Label lblTotalApplicants;
         private System.Windows.Forms.Label lblPendingScreenings;
         private System.Windows.Forms.Label lblInterviews;
@@ -308,6 +281,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private Button btnApplicantList;
     }
 }
