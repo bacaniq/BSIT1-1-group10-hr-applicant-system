@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,12 +24,15 @@ namespace HRApplicantSystem
             using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = @"SELECT CONCAT(ap.FirstName, ' ', ap.LastName) AS ApplicantName, 
-                    jv.JobTitle, app.Status 
-                    FROM Applications app
-                    JOIN Applicants ap ON app.AccountID = ap.AccountID
-                    JOIN JobVacancies jv ON app.JobID = jv.JobID
-                    WHERE app.Status = 'Submitted'";
+                string query = @"SELECT 
+                app.ApplicationID,
+                CONCAT(ap.FirstName, ' ', ap.LastName) AS ApplicantName, 
+                jv.JobTitle, 
+                app.Status 
+              FROM Applications app
+              JOIN Applicants ap ON app.AccountID = ap.AccountID
+              JOIN JobVacancies jv ON app.JobID = jv.JobID
+              WHERE app.Status = 'Submitted'";
 
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
                 MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
@@ -38,8 +42,11 @@ namespace HRApplicantSystem
                 while (reader.Read())
                 {
                     ListViewItem item = new ListViewItem(reader["ApplicantName"].ToString());
+
                     item.SubItems.Add(reader["JobTitle"].ToString());
                     item.SubItems.Add(reader["Status"].ToString());
+
+                    item.Tag = reader["ApplicationID"];
 
                     listView1.Items.Add(item);
                 }
@@ -58,59 +65,72 @@ namespace HRApplicantSystem
                 return;
             }
 
-            string applicantName = listView1.SelectedItems[0].Text;
-            string remarks = textBox1.Text;
+            int applicationId = Convert.ToInt32(listView1.SelectedItems[0].Tag);
 
             string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
-            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+
+            using (MySql.Data.MySqlClient.MySqlConnection connection =
+                   new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = @"UPDATE Applications app
-                    JOIN Applicants ap ON app.AccountID = ap.AccountID
-                    SET app.Status = 'Shortlisted'
-                    WHERE CONCAT(ap.FirstName, ' ', ap.LastName) = @name";
 
-                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@name", applicantName);
+                string updateQuery = @"
+UPDATE Applications
+SET Status = 'Shortlisted'
+WHERE ApplicationID = @id";
+
+                MySqlCommand cmd = new MySqlCommand(updateQuery, connection);
+                cmd.Parameters.AddWithValue("@id", applicationId);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show(applicantName + " marked as Qualified!");
-                listView1.Items.Clear();
-                ScreeningForm_Load(sender, e);
+                string historyQuery = @"
+INSERT INTO ApplicationStatusHistory (ApplicationID, Status, Remarks)
+VALUES (@id, 'Shortlisted', @remarks)";
+
+                MySqlCommand cmd2 = new MySqlCommand(historyQuery, connection);
+                cmd2.Parameters.AddWithValue("@id", applicationId);
+                cmd2.Parameters.AddWithValue("@remarks", textBox1.Text);
+                cmd2.ExecuteNonQuery();
+
+                MessageBox.Show("Applicant marked as Qualified and moved to Interview!");
             }
 
-
+            ScreeningForm_Load(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please select an applicant first");
+                MessageBox.Show("Please select an applicant first!");
                 return;
             }
 
-            string applicantName = listView1.SelectedItems[0].Text;
-            string remarks = textBox1.Text;
+            int applicationId = Convert.ToInt32(listView1.SelectedItems[0].Tag);
 
             string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+
             using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = @"UPDATE Applications app
-                    JOIN Applicants ap ON app.AccountID = ap.AccountID
-                    SET app.Status = 'Rejected'
-                    WHERE CONCAT(ap.FirstName, ' ', ap.LastName) = @name";
 
-                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@name", applicantName);
+                string query = @"
+            UPDATE Applications
+            SET Status = 'Rejected'
+            WHERE ApplicationID = @id";
+
+                MySql.Data.MySqlClient.MySqlCommand cmd =
+                    new MySql.Data.MySqlClient.MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@id", applicationId);
+
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show(applicantName + " marked as Not Qualified");
-                listView1.Items.Clear();
-                ScreeningForm_Load(sender, e);
+                MessageBox.Show("Applicant marked as Not Qualified!");
             }
+
+            ScreeningForm_Load(sender, e);
         }
     }
 }

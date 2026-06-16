@@ -62,10 +62,10 @@ namespace HRApplicantSystem
                 {
 
                     string query = @"
-                INSERT INTO interviewschedules
-                (ApplicationID, InterviewDate, Interviewer, Mode, Location, Status)
-                VALUES
-                (@ApplicationID, @InterviewDate, @Interviewer, @Mode, @Location, 'Scheduled')";
+INSERT INTO interviewschedules
+(ApplicationID, InterviewDate, Interviewer, Mode, Location, Status)
+VALUES
+(@ApplicationID, @InterviewDate, @Interviewer, @Mode, @Location, 'Scheduled')";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -130,11 +130,6 @@ namespace HRApplicantSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void InterviewScheduleForm_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

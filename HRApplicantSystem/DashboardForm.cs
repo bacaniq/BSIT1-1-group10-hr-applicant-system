@@ -14,7 +14,7 @@ namespace HRApplicantSystem
 {
     public partial class DashboardForm : Form
     {
-        string connectionString = "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
+        string connectionString =  "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
         public DashboardForm()
         {
             InitializeComponent();
@@ -40,20 +40,16 @@ namespace HRApplicantSystem
 
                 // Pending Screening
                 lblPendingScreenings.Text = GetCount(conn,
-                    "SELECT COUNT(*) FROM applications WHERE status = 'Pending Screening'").ToString();
+                    "SELECT COUNT(*) FROM screeningresults").ToString();
 
                 // Interview
                 lblInterviews.Text = GetCount(conn,
-                    "SELECT COUNT(*) FROM applications WHERE status = 'Interview'").ToString();
+                    "SELECT COUNT(*) FROM interviewschedules").ToString();
 
                 // Hired
                 lblHired.Text = GetCount(conn,
                     "SELECT COUNT(*) FROM applications WHERE status = 'Hired'").ToString();
             }
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -61,22 +57,6 @@ namespace HRApplicantSystem
             LoginForm login = new LoginForm();
             login.Show();
             this.Close();
-        }
-
-        private void btnTestConnection_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    conn.Open();
-                    MessageBox.Show("Connected to hrapplicant database!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
@@ -107,12 +87,6 @@ namespace HRApplicantSystem
 
             interviewForm.Show();
             interviewForm.BringToFront();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ApplicantListForm form = new ApplicantListForm();
-            form.Show();
         }
     }
 }

@@ -207,7 +207,7 @@
             Name = "InterviewScheduleForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "InterviewScheduleForm";
-            Load += InterviewScheduleForm_Load_1;
+            Load += InterviewScheduleForm_Load;
             ResumeLayout(false);
             PerformLayout();
 
