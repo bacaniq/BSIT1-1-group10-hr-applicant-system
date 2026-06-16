@@ -28,250 +28,263 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnScreenings = new System.Windows.Forms.Button();
-            this.btnInterviews = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnTestConnection = new System.Windows.Forms.Button();
-            this.lblTotalApplicants = new System.Windows.Forms.Label();
-            this.lblPendingScreenings = new System.Windows.Forms.Label();
-            this.lblInterviews = new System.Windows.Forms.Label();
-            this.lblHired = new System.Windows.Forms.Label();
-            this.lblApplicants = new System.Windows.Forms.Label();
-            this.pnlTotal = new System.Windows.Forms.Panel();
-            this.lblTotalTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlTotal.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            lblTitle = new Label();
+            btnScreenings = new Button();
+            btnInterviews = new Button();
+            btnLogout = new Button();
+            btnTestConnection = new Button();
+            lblTotalApplicants = new Label();
+            lblPendingScreenings = new Label();
+            lblInterviews = new Label();
+            lblHired = new Label();
+            lblApplicants = new Label();
+            pnlTotal = new Panel();
+            lblTotalTitle = new Label();
+            panel1 = new Panel();
+            label1 = new Label();
+            panel2 = new Panel();
+            label2 = new Label();
+            panel3 = new Panel();
+            label3 = new Label();
+            btnApplicantList = new Button();
+            pnlTotal.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(331, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(155, 30);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "HR Dashboard";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(331, 9);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(155, 30);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "HR Dashboard";
             // 
             // btnScreenings
             // 
-            this.btnScreenings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScreenings.Location = new System.Drawing.Point(249, 171);
-            this.btnScreenings.Name = "btnScreenings";
-            this.btnScreenings.Size = new System.Drawing.Size(81, 33);
-            this.btnScreenings.TabIndex = 5;
-            this.btnScreenings.Text = "Screenings";
-            this.btnScreenings.UseVisualStyleBackColor = true;
-            this.btnScreenings.Click += new System.EventHandler(this.btnScreenings_Click);
+            btnScreenings.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnScreenings.Location = new Point(249, 171);
+            btnScreenings.Name = "btnScreenings";
+            btnScreenings.Size = new Size(81, 33);
+            btnScreenings.TabIndex = 5;
+            btnScreenings.Text = "Screenings";
+            btnScreenings.UseVisualStyleBackColor = true;
+            btnScreenings.Click += btnScreenings_Click;
             // 
             // btnInterviews
             // 
-            this.btnInterviews.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInterviews.Location = new System.Drawing.Point(457, 171);
-            this.btnInterviews.Name = "btnInterviews";
-            this.btnInterviews.Size = new System.Drawing.Size(75, 33);
-            this.btnInterviews.TabIndex = 6;
-            this.btnInterviews.Text = "Interviews";
-            this.btnInterviews.UseVisualStyleBackColor = true;
-            this.btnInterviews.Click += new System.EventHandler(this.btnInterviews_Click_1);
+            btnInterviews.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInterviews.Location = new Point(457, 171);
+            btnInterviews.Name = "btnInterviews";
+            btnInterviews.Size = new Size(75, 33);
+            btnInterviews.TabIndex = 6;
+            btnInterviews.Text = "Interviews";
+            btnInterviews.UseVisualStyleBackColor = true;
+            btnInterviews.Click += btnInterviews_Click_1;
             // 
             // btnLogout
             // 
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(360, 225);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            btnLogout.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.Location = new Point(360, 225);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(75, 23);
+            btnLogout.TabIndex = 7;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnTestConnection
             // 
-            this.btnTestConnection.Location = new System.Drawing.Point(81, 225);
-            this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(111, 23);
-            this.btnTestConnection.TabIndex = 8;
-            this.btnTestConnection.Text = "Test Connection";
-            this.btnTestConnection.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTestConnection.UseVisualStyleBackColor = true;
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
+            btnTestConnection.Location = new Point(81, 225);
+            btnTestConnection.Name = "btnTestConnection";
+            btnTestConnection.Size = new Size(111, 23);
+            btnTestConnection.TabIndex = 8;
+            btnTestConnection.Text = "Test Connection";
+            btnTestConnection.TextAlign = ContentAlignment.BottomCenter;
+            btnTestConnection.UseVisualStyleBackColor = true;
+            btnTestConnection.Click += btnTestConnection_Click;
             // 
             // lblTotalApplicants
             // 
-            this.lblTotalApplicants.AutoSize = true;
-            this.lblTotalApplicants.Location = new System.Drawing.Point(407, 46);
-            this.lblTotalApplicants.Name = "lblTotalApplicants";
-            this.lblTotalApplicants.Size = new System.Drawing.Size(0, 13);
-            this.lblTotalApplicants.TabIndex = 9;
+            lblTotalApplicants.AutoSize = true;
+            lblTotalApplicants.Location = new Point(407, 46);
+            lblTotalApplicants.Name = "lblTotalApplicants";
+            lblTotalApplicants.Size = new Size(0, 15);
+            lblTotalApplicants.TabIndex = 9;
             // 
             // lblPendingScreenings
             // 
-            this.lblPendingScreenings.AutoSize = true;
-            this.lblPendingScreenings.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingScreenings.ForeColor = System.Drawing.Color.White;
-            this.lblPendingScreenings.Location = new System.Drawing.Point(124, 45);
-            this.lblPendingScreenings.Name = "lblPendingScreenings";
-            this.lblPendingScreenings.Size = new System.Drawing.Size(38, 45);
-            this.lblPendingScreenings.TabIndex = 10;
-            this.lblPendingScreenings.Text = "0";
+            lblPendingScreenings.AutoSize = true;
+            lblPendingScreenings.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPendingScreenings.ForeColor = Color.White;
+            lblPendingScreenings.Location = new Point(124, 45);
+            lblPendingScreenings.Name = "lblPendingScreenings";
+            lblPendingScreenings.Size = new Size(38, 45);
+            lblPendingScreenings.TabIndex = 10;
+            lblPendingScreenings.Text = "0";
             // 
             // lblInterviews
             // 
-            this.lblInterviews.AutoSize = true;
-            this.lblInterviews.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterviews.ForeColor = System.Drawing.Color.White;
-            this.lblInterviews.Location = new System.Drawing.Point(129, 45);
-            this.lblInterviews.Name = "lblInterviews";
-            this.lblInterviews.Size = new System.Drawing.Size(38, 45);
-            this.lblInterviews.TabIndex = 11;
-            this.lblInterviews.Text = "0";
+            lblInterviews.AutoSize = true;
+            lblInterviews.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInterviews.ForeColor = Color.White;
+            lblInterviews.Location = new Point(129, 45);
+            lblInterviews.Name = "lblInterviews";
+            lblInterviews.Size = new Size(38, 45);
+            lblInterviews.TabIndex = 11;
+            lblInterviews.Text = "0";
             // 
             // lblHired
             // 
-            this.lblHired.AutoSize = true;
-            this.lblHired.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHired.ForeColor = System.Drawing.Color.White;
-            this.lblHired.Location = new System.Drawing.Point(129, 44);
-            this.lblHired.Name = "lblHired";
-            this.lblHired.Size = new System.Drawing.Size(38, 45);
-            this.lblHired.TabIndex = 12;
-            this.lblHired.Text = "0";
+            lblHired.AutoSize = true;
+            lblHired.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHired.ForeColor = Color.White;
+            lblHired.Location = new Point(129, 44);
+            lblHired.Name = "lblHired";
+            lblHired.Size = new Size(38, 45);
+            lblHired.TabIndex = 12;
+            lblHired.Text = "0";
             // 
             // lblApplicants
             // 
-            this.lblApplicants.AutoSize = true;
-            this.lblApplicants.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicants.ForeColor = System.Drawing.Color.White;
-            this.lblApplicants.Location = new System.Drawing.Point(129, 45);
-            this.lblApplicants.Name = "lblApplicants";
-            this.lblApplicants.Size = new System.Drawing.Size(38, 45);
-            this.lblApplicants.TabIndex = 14;
-            this.lblApplicants.Text = "0";
+            lblApplicants.AutoSize = true;
+            lblApplicants.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblApplicants.ForeColor = Color.White;
+            lblApplicants.Location = new Point(129, 45);
+            lblApplicants.Name = "lblApplicants";
+            lblApplicants.Size = new Size(38, 45);
+            lblApplicants.TabIndex = 14;
+            lblApplicants.Text = "0";
             // 
             // pnlTotal
             // 
-            this.pnlTotal.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlTotal.Controls.Add(this.lblTotalTitle);
-            this.pnlTotal.Controls.Add(this.lblApplicants);
-            this.pnlTotal.Location = new System.Drawing.Point(12, 65);
-            this.pnlTotal.Name = "pnlTotal";
-            this.pnlTotal.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlTotal.Size = new System.Drawing.Size(180, 100);
-            this.pnlTotal.TabIndex = 15;
+            pnlTotal.BackColor = Color.SteelBlue;
+            pnlTotal.Controls.Add(lblTotalTitle);
+            pnlTotal.Controls.Add(lblApplicants);
+            pnlTotal.Location = new Point(12, 65);
+            pnlTotal.Name = "pnlTotal";
+            pnlTotal.Padding = new Padding(10);
+            pnlTotal.Size = new Size(180, 100);
+            pnlTotal.TabIndex = 15;
             // 
             // lblTotalTitle
             // 
-            this.lblTotalTitle.AutoSize = true;
-            this.lblTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTitle.Location = new System.Drawing.Point(59, 27);
-            this.lblTotalTitle.Name = "lblTotalTitle";
-            this.lblTotalTitle.Size = new System.Drawing.Size(108, 17);
-            this.lblTotalTitle.TabIndex = 16;
-            this.lblTotalTitle.Text = "Total Applicants";
+            lblTotalTitle.AutoSize = true;
+            lblTotalTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalTitle.Location = new Point(59, 27);
+            lblTotalTitle.Name = "lblTotalTitle";
+            lblTotalTitle.Size = new Size(108, 17);
+            lblTotalTitle.TabIndex = 16;
+            lblTotalTitle.Text = "Total Applicants";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblPendingScreenings);
-            this.panel1.Location = new System.Drawing.Point(204, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(180, 100);
-            this.panel1.TabIndex = 17;
+            panel1.BackColor = Color.Goldenrod;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblPendingScreenings);
+            panel1.Location = new Point(204, 65);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(10);
+            panel1.Size = new Size(180, 100);
+            panel1.TabIndex = 17;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Pending Screenings";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(42, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(129, 17);
+            label1.TabIndex = 16;
+            label1.Text = "Pending Screenings";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.lblInterviews);
-            this.panel2.Location = new System.Drawing.Point(400, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(180, 100);
-            this.panel2.TabIndex = 18;
+            panel2.BackColor = Color.ForestGreen;
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(lblInterviews);
+            panel2.Location = new Point(400, 65);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(10);
+            panel2.Size = new Size(180, 100);
+            panel2.TabIndex = 18;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Interviews Today";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(54, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(113, 17);
+            label2.TabIndex = 16;
+            label2.Text = "Interviews Today";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.IndianRed;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.lblHired);
-            this.panel3.Location = new System.Drawing.Point(598, 65);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(180, 100);
-            this.panel3.TabIndex = 19;
+            panel3.BackColor = Color.IndianRed;
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(lblHired);
+            panel3.Location = new Point(598, 65);
+            panel3.Name = "panel3";
+            panel3.Padding = new Padding(10);
+            panel3.Size = new Size(180, 100);
+            panel3.TabIndex = 19;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Hired Applicants";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(56, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 17);
+            label3.TabIndex = 16;
+            label3.Text = "Hired Applicants";
+            // 
+            // btnApplicantList
+            // 
+            btnApplicantList.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnApplicantList.Location = new Point(60, 177);
+            btnApplicantList.Name = "btnApplicantList";
+            btnApplicantList.Size = new Size(76, 27);
+            btnApplicantList.TabIndex = 20;
+            btnApplicantList.Text = "Applicant List";
+            btnApplicantList.UseVisualStyleBackColor = true;
+            btnApplicantList.Click += button1_Click;
             // 
             // DashboardForm
             // 
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(814, 261);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlTotal);
-            this.Controls.Add(this.lblTotalApplicants);
-            this.Controls.Add(this.btnTestConnection);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnInterviews);
-            this.Controls.Add(this.btnScreenings);
-            this.Controls.Add(this.lblTitle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "DashboardForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HR Dashboard";
-            this.Load += new System.EventHandler(this.DashboardForm_Load);
-            this.pnlTotal.ResumeLayout(false);
-            this.pnlTotal.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            BackColor = Color.White;
+            ClientSize = new Size(814, 261);
+            Controls.Add(btnApplicantList);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(pnlTotal);
+            Controls.Add(lblTotalApplicants);
+            Controls.Add(btnTestConnection);
+            Controls.Add(btnLogout);
+            Controls.Add(btnInterviews);
+            Controls.Add(btnScreenings);
+            Controls.Add(lblTitle);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "DashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "HR Dashboard";
+            Load += DashboardForm_Load;
+            pnlTotal.ResumeLayout(false);
+            pnlTotal.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -295,5 +308,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private Button btnApplicantList;
     }
 }

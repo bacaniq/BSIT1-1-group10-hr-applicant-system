@@ -14,7 +14,7 @@ namespace HRApplicantSystem
 {
     public partial class DashboardForm : Form
     {
-        string connectionString =  "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
+        string connectionString = "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
         public DashboardForm()
         {
             InitializeComponent();
@@ -107,6 +107,12 @@ namespace HRApplicantSystem
 
             interviewForm.Show();
             interviewForm.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ApplicantListForm form = new ApplicantListForm();
+            form.Show();
         }
     }
 }
