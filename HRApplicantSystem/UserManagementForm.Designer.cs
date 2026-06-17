@@ -44,6 +44,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            btnUpdate = new Button();
             SuspendLayout();
             // 
             // label1
@@ -114,7 +115,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(275, 360);
+            button1.Location = new Point(202, 360);
             button1.Name = "button1";
             button1.Size = new Size(122, 43);
             button1.TabIndex = 6;
@@ -124,7 +125,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(415, 360);
+            button2.Location = new Point(357, 360);
             button2.Name = "button2";
             button2.Size = new Size(111, 45);
             button2.TabIndex = 7;
@@ -168,11 +169,22 @@
             label5.TabIndex = 11;
             label5.Text = "Role:";
             // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(506, 360);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(111, 45);
+            btnUpdate.TabIndex = 12;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
             // UserManagementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnUpdate);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -210,5 +222,6 @@
         private ColumnHeader Email;
         private ColumnHeader Role;
         private ColumnHeader Status;
+        private Button btnUpdate;
     }
 }
