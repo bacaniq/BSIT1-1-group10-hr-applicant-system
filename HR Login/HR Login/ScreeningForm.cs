@@ -1,13 +1,11 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HR_Login
 {
@@ -18,46 +16,101 @@ namespace HR_Login
             InitializeComponent();
         }
 
-        private void LoadScreenings()
+        private void ScreeningForm_Load(object sender, EventArgs e)
         {
-            string connectionString =
-            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Ralph10272006.";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
-                conn.Open();
+                connection.Open();
+                string query = @"SELECT CONCAT(ap.FirstName, ' ', ap.LastName) AS ApplicantName, 
+                    jv.JobTitle, app.Status 
+                    FROM Applications app
+                    JOIN Applicants ap ON app.AccountID = ap.AccountID
+                    JOIN JobVacancies jv ON app.JobID = jv.JobID
+                    WHERE app.Status = 'Submitted'";
 
-                string query = @"
-            SELECT 
-                sr.ScreeningID,
-                sr.ApplicationID,
-                a.FirstName,
-                a.LastName,
-                sr.ScreenedBy,
-                sr.ScreenedAt,
-                sr.Result,
-                sr.Remarks
-            FROM screeningresults sr
-            JOIN applications app ON sr.ApplicationID = app.ApplicationID
-            JOIN applicants a ON app.AccountID = a.AccountID
-            ORDER BY sr.ScreenedAt DESC";
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
+                MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
 
-                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                listView1.Items.Clear();
 
-                dgvScreenings.DataSource = dt;
+                while (reader.Read())
+                {
+                    ListViewItem item = new ListViewItem(reader["ApplicantName"].ToString());
+                    item.SubItems.Add(reader["JobTitle"].ToString());
+                    item.SubItems.Add(reader["Status"].ToString());
+
+                    listView1.Items.Add(item);
+                }
+
+                reader.Close();
+
+
             }
         }
 
-        private void ScreeningForm_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            LoadScreenings();
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an applicant first!");
+                return;
+            }
+
+            string applicantName = listView1.SelectedItems[0].Text;
+            string remarks = textBox1.Text;
+
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"UPDATE Applications app
+                    JOIN Applicants ap ON app.AccountID = ap.AccountID
+                    SET app.Status = 'Shortlisted'
+                    WHERE CONCAT(ap.FirstName, ' ', ap.LastName) = @name";
+
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@name", applicantName);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show(applicantName + " marked as Qualified!");
+                listView1.Items.Clear();
+                ScreeningForm_Load(sender, e);
+            }
+
+
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an applicant first");
+                return;
+            }
+
+            string applicantName = listView1.SelectedItems[0].Text;
+            string remarks = textBox1.Text;
+
+            string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
+            using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"UPDATE Applications app
+                    JOIN Applicants ap ON app.AccountID = ap.AccountID
+                    SET app.Status = 'Rejected'
+                    WHERE CONCAT(ap.FirstName, ' ', ap.LastName) = @name";
+
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@name", applicantName);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show(applicantName + " marked as Not Qualified");
+                listView1.Items.Clear();
+                ScreeningForm_Load(sender, e);
+            }
         }
     }
 }

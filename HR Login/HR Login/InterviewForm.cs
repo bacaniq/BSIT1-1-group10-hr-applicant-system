@@ -21,21 +21,32 @@ namespace HR_Login
             InitializeComponent();
         }
 
-        private void LoadInterviews()
+        private void LoadInterviews(string search = "")
         {
-            string connectionString =
-            "server=localhost;database=hr_applicant_system;uid=root;pwd=Ralph10272006.;";
-
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = "SELECT * FROM interviewschedules";
+                string query = @"
+            SELECT
+                s.ScheduleID,
+                CONCAT(a.FirstName, ' ', a.LastName) AS ApplicantName,
+                s.InterviewDate,
+                s.Interviewer,
+                s.Mode,
+                s.Location,
+                s.Status
+            FROM interviewschedules s
+            JOIN applications ap ON s.ApplicationID = ap.ApplicationID
+            JOIN applicants a ON ap.AccountID = a.AccountID
+            WHERE CONCAT(a.FirstName, ' ', a.LastName) LIKE @search
+            ORDER BY s.InterviewDate DESC";
 
-                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@search", "%" + search + "%");
 
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-
                 da.Fill(dt);
 
                 dgvInterviews.DataSource = dt;
@@ -86,6 +97,142 @@ namespace HR_Login
             LoadInterviewStats();
             LoadInterviews(); 
         }
+
+        private void btnInterview_Click(object sender, EventArgs e)
+        {
+            InterviewScheduleForm frm = new InterviewScheduleForm();
+
+            frm.ShowDialog();
+
+            LoadInterviews();
+            LoadInterviewStats();
+        }
+
+        private int selectedScheduleID = 0;
+
+        private void dgvInterviews_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedScheduleID = Convert.ToInt32(
+                    dgvInterviews.Rows[e.RowIndex].Cells["ScheduleID"].Value
+                );
+            }
+        }
+
+        private void btnPassed_Click(object sender, EventArgs e)
+        {
+            if (selectedScheduleID == 0)
+            {
+                MessageBox.Show("Please select an interview.");
+                return;
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "UPDATE interviewschedules SET Status='Passed' WHERE ScheduleID=@id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", selectedScheduleID);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            LoadInterviews();
+            LoadInterviewStats();
+        }
+
+        private void btnFailed_Click(object sender, EventArgs e)
+        {
+            if (selectedScheduleID == 0)
+            {
+                MessageBox.Show("Please select an interview.");
+                return;
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "UPDATE interviewschedules SET Status='Failed' WHERE ScheduleID=@id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", selectedScheduleID);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            LoadInterviews();
+            LoadInterviewStats();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedScheduleID == 0)
+            {
+                MessageBox.Show("Please select an interview.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Delete this interview?",
+                "Confirm",
+                MessageBoxButtons.YesNo
+            );
+
+            if (result != DialogResult.Yes)
+                return;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "DELETE FROM interviewschedules WHERE ScheduleID=@id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", selectedScheduleID);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            LoadInterviews();
+            LoadInterviewStats();
+        }
+
+        private void dgvInterviews_CellDoubleClick(
+    object sender,
+    DataGridViewCellEventArgs e)
+        {
+            if (selectedScheduleID == 0)
+                return;
+
+            InterviewScheduleForm frm =
+                new InterviewScheduleForm(selectedScheduleID);
+
+            frm.ShowDialog();
+
+            LoadInterviews();
+            LoadInterviewStats();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LoadInterviews(txtSearch.Text.Trim());
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadInterviews(txtSearch.Text.Trim());
+        }
+
     }
 }
 
