@@ -71,6 +71,19 @@ namespace ApplicantLogInFormFull
 
                                 SessionManager.LoggedInAccountID = accountID;
 
+                                // ── AUDIT: log the login ──
+                                reader.Close();
+                                string auditQuery = "INSERT INTO AuditTrail (UserType, UserID, Action, ActionAt) VALUES (@userType, @userID, @action, @actionAt)";
+                                using (MySqlCommand auditCmd = new MySqlCommand(auditQuery, conn))
+                                {
+                                    auditCmd.Parameters.AddWithValue("@userType", "Applicant");
+                                    auditCmd.Parameters.AddWithValue("@userID", accountID);
+                                    auditCmd.Parameters.AddWithValue("@action", "Logged in");
+                                    auditCmd.Parameters.AddWithValue("@actionAt", DateTime.Now);
+                                    auditCmd.ExecuteNonQuery();
+                                }
+                                // ─────────────────────────
+
                                 MessageBox.Show("Login successful!");
 
                                 this.Hide();

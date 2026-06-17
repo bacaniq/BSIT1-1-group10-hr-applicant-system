@@ -18,19 +18,18 @@ namespace HRApplicantSystem
         private void AuditTrailForm_Load(object sender, EventArgs e)
         {
             string connectionString = "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22";
-
             using (MySql.Data.MySqlClient.MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT UserType, Action, ActionAt FROM AuditTrail ORDER BY ActionAt ASC";
+                string query = "SELECT UserType, UserID, Action, ActionAt FROM AuditTrail ORDER BY ActionAt ASC";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, connection);
                 MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
-
                 while (reader.Read())
                 {
                     ListViewItem item = new ListViewItem(reader["UserType"].ToString());
-                    item.SubItems.Add(reader["Action"].ToString());
+                    item.SubItems.Add(reader["UserID"].ToString());
                     item.SubItems.Add(reader["ActionAt"].ToString());
+                    item.SubItems.Add(reader["Action"].ToString());
                     listView1.Items.Add(item);
                 }
             }

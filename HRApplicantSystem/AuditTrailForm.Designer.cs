@@ -33,6 +33,7 @@
             UserType = new ColumnHeader();
             Action = new ColumnHeader();
             ActionAt = new ColumnHeader();
+            mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             SuspendLayout();
             // 
             // label1
@@ -61,10 +62,12 @@
             // 
             // Action
             // 
+            Action.DisplayIndex = 2;
             Action.Text = "Action";
             // 
             // ActionAt
             // 
+            ActionAt.DisplayIndex = 1;
             ActionAt.Text = "ActionAt";
             // 
             // AuditTrailForm
@@ -86,7 +89,8 @@
         private Label label1;
         private ListView listView1;
         private ColumnHeader UserType;
-        private ColumnHeader Action;
         private ColumnHeader ActionAt;
+        private ColumnHeader Action;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
     }
 }

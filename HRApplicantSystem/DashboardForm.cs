@@ -14,7 +14,7 @@ namespace HRApplicantSystem
 {
     public partial class DashboardForm : Form
     {
-        string connectionString =  "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
+        string connectionString = "server=localhost;database=hr_applicant_system;uid=root;pwd=Babyquero22;";
         public DashboardForm()
         {
             InitializeComponent();
@@ -44,12 +44,16 @@ namespace HRApplicantSystem
 
                 // Interview
                 lblInterviews.Text = GetCount(conn,
-                    "SELECT COUNT(*) FROM interviewschedules").ToString();
+                    "SELECT COUNT(*) FROM applications WHERE status = 'Interview'").ToString();
 
                 // Hired
                 lblHired.Text = GetCount(conn,
                     "SELECT COUNT(*) FROM applications WHERE status = 'Hired'").ToString();
             }
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -87,6 +91,30 @@ namespace HRApplicantSystem
 
             interviewForm.Show();
             interviewForm.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ApplicantListForm form = new ApplicantListForm();
+            form.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AuditTrailForm frm = new AuditTrailForm();
+            frm.ShowDialog();
+        }
+
+        private void btnJobVacancy_Click(object sender, EventArgs e)
+        {
+            JobVacancyManagement frm = new JobVacancyManagement();
+            frm.Show();
+        }
+
+        private void btnUserManagement_Click(object sender, EventArgs e)
+        {
+            UserManagementForm frm = new UserManagementForm();
+            frm.Show();
         }
     }
 }
