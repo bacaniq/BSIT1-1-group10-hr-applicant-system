@@ -1,0 +1,141 @@
+using MySql.Data.MySqlClient;
+using System;
+using System.Data.Common;
+using System.Windows.Forms;
+
+namespace HRApplicantSystem
+{
+    public partial class ApplicantDashboardForm : Form
+    {
+        public static int ApplicantID
+        {
+            get
+            {
+                return ApplicantLogInFormFull.Form1.SessionManager.LoggedInAccountID;
+            }
+        }
+
+        public ApplicantDashboardForm()
+        {
+            InitializeComponent();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            LoadDashboard();
+        }
+
+        private void LoadDashboard()
+        {
+            try
+            {
+                var connectionString = new MySqlConnection("Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=shawnpogi128;");
+                connectionString.Open();
+
+                string nameQuery = "SELECT FirstName, LastName FROM applicants WHERE AccountID = " + ApplicantID;
+                MySqlCommand nameCmd = new MySqlCommand(nameQuery, connectionString);
+                MySqlDataReader nameReader = nameCmd.ExecuteReader();
+                if (nameReader.Read())
+                {
+                    lblWelcome.Text = "Welcome, " + nameReader["FirstName"] + "!";
+                }
+                nameReader.Close();
+
+                string statusQuery = @"
+                SELECT Status FROM Applications 
+                WHERE AccountID = " + ApplicantID + @"
+                ORDER BY 
+                CASE WHEN Status = 'Submitted' THEN 0 ELSE 1 END ASC,
+                ApplicationID DESC
+                LIMIT 1";
+                MySqlCommand statusCmd = new MySqlCommand(statusQuery, connectionString);
+                MySqlDataReader statusReader = statusCmd.ExecuteReader();
+                if (statusReader.Read())
+                {
+                    lblStatusValue.Text = statusReader["Status"].ToString();
+                }
+                else
+                {
+                    lblStatusValue.Text = "No application yet";
+                }
+                statusReader.Close();
+
+                lblMissingValue.Text = "0";
+
+                string intQuery = "SELECT i.InterviewDate, i.Mode FROM InterviewSchedules i " +
+                  "JOIN Applications a ON i.ApplicationID = a.ApplicationID " +
+                  "WHERE a.AccountID = " + ApplicantID;
+                MySqlCommand intCmd = new MySqlCommand(intQuery, connectionString);
+                MySqlDataReader intReader = intCmd.ExecuteReader();
+                if (intReader.Read())
+                {
+                    lblInterviewValue.Text = intReader["InterviewDate"] + " - " + intReader["Mode"];
+                }
+                else
+                {
+                    lblInterviewValue.Text = "No interview scheduled";
+                }
+                intReader.Close();
+
+                connectionString.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            JobVacancies jobForm = new JobVacancies();
+            jobForm.Show();
+        }
+
+        private void btnDocuments_Click(object sender, EventArgs e)
+        {
+            MyDocumentsForm docsForm = new MyDocumentsForm();
+            docsForm.Show();
+        }
+
+        private void btnProfile_Click_1(object sender, EventArgs e)
+        {
+            ApplicantProfileForm profile = new ApplicantProfileForm(ApplicantLogInFormFull.Form1.SessionManager.LoggedInAccountID);
+            profile.ShowDialog();
+        }
+
+        private void btnStatus_Click_1(object sender, EventArgs e)
+        {
+            ApplicationStatusForm statusForm = new ApplicationStatusForm();
+            statusForm.ShowDialog();
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            // ── AUDIT: log the logout ──
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(
+                    "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=shawnpogi128;"))
+                {
+                    conn.Open();
+                    string auditQuery = "INSERT INTO AuditTrail (UserType, UserID, Action, ActionAt) VALUES (@userType, @userID, @action, @actionAt)";
+                    using (MySqlCommand auditCmd = new MySqlCommand(auditQuery, conn))
+                    {
+                        auditCmd.Parameters.AddWithValue("@userType", "Applicant");
+                        auditCmd.Parameters.AddWithValue("@userID", ApplicantID);
+                        auditCmd.Parameters.AddWithValue("@action", "Logged out");
+                        auditCmd.Parameters.AddWithValue("@actionAt", DateTime.Now);
+                        auditCmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Audit log error: " + ex.Message);
+            }
+            // ──────────────────────────
+
+            this.Close();
+        }
+    }
+}
