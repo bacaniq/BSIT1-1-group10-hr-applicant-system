@@ -48,7 +48,6 @@ namespace HRApplicantSystem
                 CASE WHEN Status = 'Submitted' THEN 0 ELSE 1 END ASC,
                 ApplicationID DESC
                 LIMIT 1";
-
                 MySqlCommand statusCmd = new MySqlCommand(statusQuery, connectionString);
                 MySqlDataReader statusReader = statusCmd.ExecuteReader();
                 if (statusReader.Read())
@@ -94,14 +93,13 @@ namespace HRApplicantSystem
 
         private void btnDocuments_Click(object sender, EventArgs e)
         {
-            MyDocumentsForm docsForm = new MyDocumentsForm();
+            MyDocuments docsForm = new MyDocuments();
             docsForm.Show();
         }
 
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
             ApplicantProfileForm profile = new ApplicantProfileForm(ApplicantLogInFormFull.Form1.SessionManager.LoggedInAccountID);
-
             profile.ShowDialog();
         }
 
@@ -113,6 +111,30 @@ namespace HRApplicantSystem
 
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
+            // ── AUDIT: log the logout ──
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(
+                    "Server=localhost;Database=hr_applicant_system;Uid=root;Pwd=Babyquero22;"))
+                {
+                    conn.Open();
+                    string auditQuery = "INSERT INTO AuditTrail (UserType, UserID, Action, ActionAt) VALUES (@userType, @userID, @action, @actionAt)";
+                    using (MySqlCommand auditCmd = new MySqlCommand(auditQuery, conn))
+                    {
+                        auditCmd.Parameters.AddWithValue("@userType", "Applicant");
+                        auditCmd.Parameters.AddWithValue("@userID", ApplicantID);
+                        auditCmd.Parameters.AddWithValue("@action", "Logged out");
+                        auditCmd.Parameters.AddWithValue("@actionAt", DateTime.Now);
+                        auditCmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Audit log error: " + ex.Message);
+            }
+            // ──────────────────────────
+
             this.Close();
         }
     }

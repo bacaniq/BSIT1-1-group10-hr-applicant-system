@@ -45,6 +45,10 @@
             label2 = new Label();
             panel3 = new Panel();
             label3 = new Label();
+            btnApplicantList = new Button();
+            button1 = new Button();
+            btnJobVacancy = new Button();
+            btnUserManagement = new Button();
             pnlTotal.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -86,7 +90,7 @@
             // btnLogout
             // 
             btnLogout.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogout.Location = new Point(360, 225);
+            btnLogout.Location = new Point(155, 225);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 7;
@@ -230,10 +234,58 @@
             label3.TabIndex = 16;
             label3.Text = "Hired Applicants";
             // 
+            // btnApplicantList
+            // 
+            btnApplicantList.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnApplicantList.Location = new Point(60, 177);
+            btnApplicantList.Name = "btnApplicantList";
+            btnApplicantList.Size = new Size(76, 27);
+            btnApplicantList.TabIndex = 20;
+            btnApplicantList.Text = "Applicant List";
+            btnApplicantList.UseVisualStyleBackColor = true;
+            btnApplicantList.Click += button1_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(643, 180);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 21;
+            button1.Text = "Audit Trail";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // btnJobVacancy
+            // 
+            btnJobVacancy.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnJobVacancy.Location = new Point(546, 225);
+            btnJobVacancy.Name = "btnJobVacancy";
+            btnJobVacancy.Size = new Size(204, 23);
+            btnJobVacancy.TabIndex = 22;
+            btnJobVacancy.Text = "Job Vacancy Management";
+            btnJobVacancy.UseVisualStyleBackColor = true;
+            btnJobVacancy.Click += btnJobVacancy_Click;
+            // 
+            // btnUserManagement
+            // 
+            btnUserManagement.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUserManagement.Location = new Point(317, 225);
+            btnUserManagement.Name = "btnUserManagement";
+            btnUserManagement.Size = new Size(181, 23);
+            btnUserManagement.TabIndex = 23;
+            btnUserManagement.Text = "User Management";
+            btnUserManagement.UseVisualStyleBackColor = true;
+            btnUserManagement.Click += btnUserManagement_Click;
+            // 
             // DashboardForm
             // 
             BackColor = Color.White;
             ClientSize = new Size(814, 261);
+            Controls.Add(btnUserManagement);
+            Controls.Add(btnJobVacancy);
+            Controls.Add(button1);
+            Controls.Add(btnApplicantList);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -281,5 +333,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private Button btnApplicantList;
+        private Button button1;
+        private Button btnJobVacancy;
+        private Button btnUserManagement;
     }
 }
